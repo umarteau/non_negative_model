@@ -1,3 +1,7 @@
 **/.ipynb_checkpoints
 *.pdf
 *.idea
+**/.egg-info
+**/.idea
+**/.pyc
+**/__pycache__
