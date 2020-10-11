@@ -188,8 +188,7 @@ class LMK(object):
             return [torch.zeros((n,1)),torch.zeros((1,1))]
         
         self.dz = dz
-        
-        return None
+
     
     
     def R(self,a):
@@ -235,7 +234,50 @@ class Sreg(object):
     def recoverPrimal(self,f):
         return self.smoothness*f
 
-    
+
+
+
+class LinearEstimator(object):
+    def __init__(self,la = 1,sigma = 1,Niter = 100,score_param = 'normal'):
+        self.la = la
+        self.sigma = sigma
+        self.Niter = Niter
+        self.score_param = score_param
+
+    def get_params(self, deep=True):
+        # suppose this estimator has parameters "alpha" and "recursive"
+        return {"la": self.la, "sigma": self.sigma,"Niter" : self.Niter,"score_param": self.score_param}
+
+    def set_params(self, **parameters):
+        for parameter, value in parameters.items():
+            setattr(self, parameter, value)
+        return self
+
+    def fit(self,X,y = None):
+        self.regmodel = Sreg(self.la)
+        self.lmodel = LMK(self.sigma,X)
+        self.dModel = densityModel(self.regmodel, self.lmodel)
+        freq = self.Niter // 5
+        cb, cobj = self.dModel.cbcboj_pd(freq, plot=False)
+        al = self.dModel.prox_method(self.Niter, cb=cb, cobj=cobj)
+        self.al = al
+
+
+    def predict(self,X,y = None):
+        return self.dModel.px_dual(self.al, X)
+
+
+    def score(self,X,y = None):
+        p = self.dModel.px_dual(self.al, X)
+        if self.score_param == 'normal':
+            if (p <= 0).sum() > 0:
+                return -torch.tensor(np.inf)
+            else:
+                return (torch.log(p)).mean()
+
+
+
+
     
 class QKM(object): 
     def __init__(self,sigma,x,kernel = 'gaussian',centered = False,c = 0,base = '1',mu_base = None,eta_base = None,useGPU = False,nmax_gpu = None,target_norm = 1):
@@ -509,6 +551,9 @@ class densityModel(object):
         
     
     def prox_method(self,Niter,cb = cb_prox,cobj = {}):
+        if isinstance(Niter,type(None)):
+            Niter = int(20 + np.sqrt(1/self.reg.la))
+            print(f'Niter is {Niter}')
     
         O_fun,O_fungrad = self.reg.Omegas()
     
@@ -554,7 +599,66 @@ class densityModel(object):
             cb(cobj,al)
     
         plt.plot(list(range(len(loss_iter))),(loss_iter))
+        plt.show()
         return(al)
+
+
+
+
+class QuadraticEstimator(object):
+    def __init__(self,la = 1,sigma = 1,Niter = None,score_param = 'normal',
+                 mu = None,kernel = 'gaussian',centered = False,c = 0,
+                 base = 'gaussian',mu_base = None,eta_base = None):
+        self.la = la
+        self.sigma = sigma
+        self.Niter = Niter
+        self.score_param = score_param
+        self.mu = mu
+        self.kernel = kernel
+        self.centered = centered
+        self. c = c
+        self.base = base
+        self.mu_base = mu_base
+        self.eta_base = eta_base
+        self.target_norm = np.sqrt(la * 0.01)
+
+
+
+    def get_params(self, deep=True):
+        # suppose this estimator has parameters "alpha" and "recursive"
+        return {"la": self.la, "sigma": self.sigma,"Niter" : self.Niter,"score_param": self.score_param}
+
+    def set_params(self, **parameters):
+        for parameter, value in parameters.items():
+            setattr(self, parameter, value)
+        return self
+
+    def fit(self,X,y = None):
+        self.lmodel = QKM(self.sigma, X, kernel=self.kernel, centered=self.centered,
+                                c=self.c, base=self.base, mu_base=self.mu_base,
+                           eta_base=self.eta_base, target_norm=self.target_norm)
+        if isinstance(self.mu,type(None)):
+            self.mu = self.la*0.01
+        self.regmodel = ENreg(self.la, self.mu)
+        self.dModel = densityModel(self.regmodel, self.lmodel)
+        self.regmodel = Sreg(self.la)
+        self.lmodel = LMK(self.sigma,X)
+        self.dModel = densityModel(self.regmodel, self.lmodel)
+        al = self.dModel.prox_method(self.Niter)
+        self.al = al
+
+
+    def predict(self,X,y = None):
+        return self.dModel.px_dual(self.al, X)
+
+
+    def score(self,X,y = None):
+        p = self.dModel.px_dual(self.al, X)
+        if self.score_param == 'normal':
+            if (p <= 0).sum() > 0:
+                return -torch.tensor(np.inf)
+            else:
+                return (torch.log(p)).mean()
         
 
 ###########################################################
