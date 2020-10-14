@@ -41,7 +41,10 @@ def gaussianKernel(sigma):
         dist.clamp_(min = -30,max = 0)
         dist.exp_()
         return dist
-    return (lambda  x1,x2 : aux(sigma,x1,x2))
+
+    def auxaux(x1,x2):
+        return aux(sigma,x1,x2)
+    return auxaux
 
     
     
@@ -71,9 +74,13 @@ def integrateGuaussianVector(sigma,base = '1',mu_base = None,eta_base = None):
         norm.exp_()
         return norm
     if base == '1':
-        return (lambda x : aux1(sigma,x))
+        def aux11(x):
+            return aux1(sigma,x)
+        return aux11
     elif base == 'gaussian':
-        return (lambda x : aux2(sigma,mu_base,eta_base,x))
+        def aux22(x):
+            return aux2(sigma,mu_base,eta_base,x)
+        return aux22
     else:
         raise NameError("base unknown")
         
@@ -146,9 +153,13 @@ def integrateGuaussianMatrix(sigma,base = '1',mu_base = None,eta_base = None):
         dist.exp_()
         return dist
     if base == '1':
-        return(lambda x1,x2 : aux1(sigma,x1,x2))
+        def aux11(x1,x2):
+            return aux1(sigma,x1,x2)
+        return aux11
     elif base == 'gaussian':
-        return (lambda x1,x2 : aux2(sigma,mu_base,eta_base,x1,x2))
+        def aux22(x1,x2):
+            return aux2(sigma,mu_base,eta_base,x1,x2)
+        return aux22
     else:
         raise NameError("base Unknown")
 
@@ -190,7 +201,9 @@ def expoKernel(sigma):
         dist.clamp_(min = -30,max = 0)
         dist.exp_()
         return dist
-    return (lambda  x1,x2 : aux(sigma,x1,x2))
+    def auxaux(x1,x2):
+        return aux(sigma,x1,x2)
+    return auxaux
 
     
     
@@ -223,11 +236,15 @@ def integrateExpoVector(sigma,base = '1',mu_base = None,eta_base = None):
             mu = mu.view(d)
         sig = sigma/(np.sqrt(2)*eta)
         xx =(x - mu.unsqueeze(0))/(np.sqrt(2)*eta)
-        return auxauxIVE(sig,xx)
+        return aux2aux(sig,xx)
     if base == '1':
-        return (lambda x : aux1(sigma,x))
+        def aux11(x):
+            return aux1(sigma,x)
+        return aux11
     elif base == 'gaussian':
-        return (lambda x : aux2(sigma,mu_base,eta_base,x))
+        def aux22(x):
+            return aux2(sigma,mu_base,eta_base,x)
+        return aux22
     else:
         raise NameError("base unknown")
         
@@ -297,9 +314,13 @@ def integrateExpoMatrix(sigma,base = '1',mu_base = None,eta_base = None):
         
     
     if base == '1':
-        return(lambda x1,x2 : aux1(sigma,x1,x2))
+        def aux11(x1,x2):
+            return aux1(sigma,x1,x2)
+        return aux11
     elif base == 'gaussian':
-        return (lambda x1,x2 : aux2(sigma,mu_base,eta_base,x1,x2))
+        def aux22(x1,x2):
+            return aux2(sigma,mu_base,eta_base,x1,x2)
+        return aux22
     else:
         raise NameError("unknown base")
 
@@ -314,11 +335,18 @@ def integrateExpoMatrix(sigma,base = '1',mu_base = None,eta_base = None):
     
     
 
-def produceDU(useGPU):
+def produceDU(useGPU = False):
     if useGPU:
-        return (lambda x : x.to('cpu'),lambda x : x.to('cuda')) 
+        def aux(x):
+            return x.to('cpu')
+        def aux2(x):
+            return x.to('cuda')
+
+        return (aux,aux2)
     else:
-        return (lambda x : x,lambda x : x)
+        def aux(x):
+            return x
+        return (aux,aux)
 
  
     

@@ -12,9 +12,16 @@ torch.set_default_dtype(torch.float64)
 
 def produceDU(useGPU = False):
     if useGPU:
-        return (lambda x : x.to('cpu'),lambda x : x.to('cuda')) 
+        def aux(x):
+            return x.to('cpu')
+        def aux2(x):
+            return x.to('cuda')
+
+        return (aux,aux2)
     else:
-        return (lambda x : x,lambda x : x)
+        def aux(x):
+            return x
+        return (aux,aux)
 
 
 def chol(M,useGPU = False):
@@ -40,6 +47,44 @@ def createT(kern,C,useGPU = False):
     T = chol(K,useGPU = useGPU)
     del K
     return T
+
+
+def small_stopper(l_iter,tol = 1e-2,d = 5):
+    if len(l_iter) < 10:
+        return False
+    else:
+        n = len(l_iter)
+        k = n //d
+        max_shift = l_iter[n-1] - l_iter[k*(d-1)]
+        max_shift_2 = l_iter[n-1] - l_iter[0]
+        r = max_shift/max_shift_2
+        #print(r)
+        if r < tol:
+            return True
+        else:
+            return False
+
+class integral_tracker(object):
+    def __init__(self,tol = 1e-2,d = 6):
+        self.tol = tol
+        self.d = d
+        self.count = 0
+        self.count_1 = 0
+
+    def add_int(self,val):
+        self.count += 1
+        if val < 1+ self.tol and val > 1-self.tol :
+            self.count_1 += 1
+        else:
+            self.count_1 = 0
+    def check_int(self):
+        if self.count_1/self.count > 1/self.d and self.count > 30:
+            return True
+
+        else:
+            return False
+
+
 
     
 ############################################################################################
@@ -119,9 +164,11 @@ class LMK(object):
         elif kernel == 'gaussian':
             kernel_fun = KT.gaussianKernel(sigma)
             
-        kern_aux = lambda A,B :  KT.blockKernComp(A, B, kernel_fun, useGPU = useGPU, nmax_gpu = nmax_gpu)
+        def kern_aux(A,B):
+            return KT.blockKernComp(A, B, kernel_fun, useGPU = useGPU, nmax_gpu = nmax_gpu)
         if centered == False:
-            kern = lambda A : kern_aux(x,A)+c
+            def kern(A):
+                return kern_aux(x,A)+c
         else:
             K_0 = kern_aux(x,None)
             K_0m = K_0.mean(1)
@@ -168,7 +215,9 @@ class LMK(object):
         self.Sig = Sig.view((1,n))
         
         if base == '1':
-            self.nu = lambda x : 0*x + 1
+            def nu(x):
+                return 0*x +1
+            self.nu = nu
         elif base == 'gaussian':
             def nu(x):
                 if type(mu_base) != torch.Tensor:
@@ -201,7 +250,10 @@ class LMK(object):
         n = dv[0].size(0)
         t1 = self.V@ dv[0]/(np.sqrt(n)*self.renorm[0])
         t2 = dv[1]*self.Sig.T/self.renorm[1]
-        return t1 + t2 
+        return t1 + t2
+
+    def integral(self,a):
+        return self.Sig @ a
         
     def Rx(self,a,xtest):
         print("integral = {}".format(self.Sig @ a))
@@ -254,10 +306,14 @@ class LinearEstimator(object):
         return self
 
     def fit(self,X,y = None):
+        self.Xtrain = X
         self.regmodel = Sreg(self.la)
         self.lmodel = LMK(self.sigma,X)
         self.dModel = densityModel(self.regmodel, self.lmodel)
-        freq = self.Niter // 5
+        if not(isinstance(self.Niter,int)):
+            freq = int(100 + 10*np.sqrt(1/self.dModel.reg.la)) // 5
+        else:
+            freq = self.Niter // 5
         cb, cobj = self.dModel.cbcboj_pd(freq, plot=False)
         al = self.dModel.prox_method(self.Niter, cb=cb, cobj=cobj)
         self.al = al
@@ -300,9 +356,11 @@ class QKM(object):
         elif kernel == 'gaussian':
             kernel_fun = KT.gaussianKernel(sigma)
             
-        kern_aux = lambda A,B :  KT.blockKernComp(A, B, kernel_fun, useGPU = useGPU, nmax_gpu = nmax_gpu)
+        def kern_aux(A,B):
+            return KT.blockKernComp(A, B, kernel_fun, useGPU = useGPU, nmax_gpu = nmax_gpu)
         if centered == False:
-            kern = lambda A : kern_aux(x,A)+c
+            def kern(A):
+                return kern_aux(x,A)+c
         else:
             K_0 = kern_aux(x,None)
             K_0m = K_0.mean(1)
@@ -365,7 +423,9 @@ class QKM(object):
 
             
         if base == '1':
-            self.nu = lambda x : 0*x + 1
+            def nu(x):
+                return 0*x +1
+            self.nu = nu
         elif base == 'gaussian':
             def nu(x):
                 if type(mu_base) != torch.Tensor:
@@ -404,7 +464,9 @@ class QKM(object):
         return (D(Vg @ (U(alpha[0].view(n)) * Vg).T)/(np.sqrt(self.n)*self.renorm[0])+alpha[1]*self.Sig/self.renorm[1]) 
 
         
-        
+    def integral(self,f):
+        return (self.Sig * f).sum()
+
     def Rx(self,f,xtest):
         print("integral = {}".format((self.Sig * f).sum()))
         Ktt = self.kern(xtest)
@@ -467,7 +529,8 @@ class logLikelihoodConstrained(object):
         ka = self.ka
         eq = self.eq
         n = alpha[0].size(0)
-        aux_prox = lambda x : 0.5*(x + torch.sqrt(x**2 + 4 * c/ka**2))
+        def aux_prox(x):
+            return 0.5*(x + torch.sqrt(x**2 + 4 * c/ka**2))
         res = []
         res.append( (-ka/(np.sqrt(n)))*aux_prox(-np.sqrt(n)*alpha[0]/ka))
         res.append(alpha[1]-c*eq)
@@ -551,9 +614,19 @@ class densityModel(object):
         
     
     def prox_method(self,Niter,cb = cb_prox,cobj = {}):
-        if isinstance(Niter,type(None)):
-            Niter = int(20 + np.sqrt(1/self.reg.la))
-            print(f'Niter is {Niter}')
+
+        if Niter == 'auto':
+            is_auto = True
+        else:
+            is_auto = False
+        if isinstance(Niter,type(None)) or isinstance(Niter,str):
+            Niter_bis = int(100 + 10*np.sqrt(1/self.reg.la))
+        else:
+            Niter_bis = Niter
+
+        it = integral_tracker(tol = 1e-2)
+
+
     
         O_fun,O_fungrad = self.reg.Omegas()
     
@@ -580,10 +653,12 @@ class densityModel(object):
         eta_Lf = 1.1
         
         #Lmax = ka
-        for i in range(Niter):
+        for i in range(Niter_bis):
             Oval,Ograd,Gl_dual = Oms_dual(al2)
             if i > 0:
-                loss_iter.append(-self.loss.Ls(al) - O_fun(self.lmodel.Rt(minus_l(al))))
+                f,g = O_fungrad(self.lmodel.Rt(minus_l(al)))
+                loss_iter.append(-self.loss.Ls(al) - f)
+                it.add_int(self.lmodel.integral(g))
             while True:
                 c = 1/Lf
                 al1 = self.loss.Lsprox(c,add_l(al2,Ograd,-c))
@@ -597,7 +672,14 @@ class densityModel(object):
             al = al1
             tk = tk1
             cb(cobj,al)
-    
+            if is_auto:
+                sst = small_stopper(loss_iter,tol = 1e-3,d = 5)
+
+                if sst and it.check_int():
+                    print(f"Finished after {i} iterations")
+                    break
+
+        print(f'Integral tracker values : {it.count},{it.count_1}')
         plt.plot(list(range(len(loss_iter))),(loss_iter))
         plt.show()
         return(al)
@@ -626,7 +708,15 @@ class QuadraticEstimator(object):
 
     def get_params(self, deep=True):
         # suppose this estimator has parameters "alpha" and "recursive"
-        return {"la": self.la, "sigma": self.sigma,"Niter" : self.Niter,"score_param": self.score_param}
+        return {"la": self.la, "sigma": self.sigma,"Niter" : self.Niter,"score_param": self.score_param,
+                "mu" : self.mu,
+                "kernel" : self.kernel,
+                "centered" : self.centered,
+                "c" : self.c,
+                "base" : self.base,
+                "mu_base" : self.mu_base,
+                "eta_base" : self.eta_base
+                }
 
     def set_params(self, **parameters):
         for parameter, value in parameters.items():
@@ -642,8 +732,6 @@ class QuadraticEstimator(object):
         self.regmodel = ENreg(self.la, self.mu)
         self.dModel = densityModel(self.regmodel, self.lmodel)
         self.regmodel = Sreg(self.la)
-        self.lmodel = LMK(self.sigma,X)
-        self.dModel = densityModel(self.regmodel, self.lmodel)
         al = self.dModel.prox_method(self.Niter)
         self.al = al
 
@@ -668,7 +756,8 @@ class QuadraticEstimator(object):
 
             
 
-logloss = lambda x : -(torch.log(x)).sum()
+def logloss(x):
+    return -(torch.log(x)).sum()
 
 def logloss_prox(eps,x):
     return (x+ torch.sqrt(x**2 + 4*eps))/2
@@ -721,8 +810,10 @@ class kernelModel(object):
         elif kernel == 'gaussian':
             kernel_fun = KT.gaussianKernel(sigma)
             
-        kern_aux = lambda A,B :  KT.blockKernComp(A, B, kernel_fun, useGPU = useGPU, nmax_gpu = nmax_gpu)
-        kern = lambda A : kern_aux(x,A)+c
+        def kern_aux(A,B):
+            return KT.blockKernComp(A, B, kernel_fun, useGPU = useGPU, nmax_gpu = nmax_gpu)
+        def kern(A):
+            return kern_aux(x,A)+c
         self.kern = kern
         
         
@@ -732,7 +823,9 @@ class kernelModel(object):
         #K[range(n),range(n)]+= 1e-12*n
         
         if base == '1':
-            self.nu = lambda x : 0*x + 1
+            def nu(x):
+                return 0*x +1
+            self.nu = nu
         elif base == 'gaussian':
             def nu(x):
                 if type(mu_base) != torch.Tensor:
@@ -763,6 +856,8 @@ class kernelModel(object):
         def dz():
             return torch.zeros((n,1))
         self.dz = dz
+    def integral(self,a):
+        return self.Sig.T @ a
         
     def Rx(self,a,xtest):
         print("integral = {}".format(self.Sig.T @ a))
@@ -775,11 +870,7 @@ class kernelModel(object):
         
 
             
-        
-    
 
-    
-    
 class densityModelNW(object):
     def __init__(self,kmodel,la,eps = 0.001):
         self.kmodel = kmodel
@@ -824,6 +915,17 @@ class densityModelNW(object):
         return None
     
     def FISTA(self,Niter,cb = cb_prox,cobj = {}):
+
+        if Niter == 'auto':
+            is_auto = True
+        else:
+            is_auto = False
+        if isinstance(Niter,type(None)) or isinstance(Niter,str):
+            Niter_bis = int(100 + 10*np.sqrt(self.smoothness))
+        else:
+            Niter_bis = Niter
+
+        it = integral_tracker(tol = 1e-2)
     
 
         def Gl(alpha):
@@ -848,10 +950,11 @@ class densityModelNW(object):
         eta_Lf = 1.1
         
         #Lmax = ka
-        for i in range(Niter):
+        for i in range(Niter_bis):
             fun,grad,GL = Gl(al2)
             if i > 0:
                 loss_iter.append(self.Loss_tot(al))
+                it.add_int(self.kmodel.integral(al))
             while True:
                 gamma = 1/Lf
                 al1 = self.proj(al2-gamma*grad)
@@ -867,8 +970,14 @@ class densityModelNW(object):
             al = al1
             tk = tk1
             cb(cobj,al)
+            if is_auto:
+                sst = small_stopper(loss_iter,tol = 1e-3,d = 5)
+                if sst and it.check_int():
+                    print(f"Finished after {i} iterations")
+                    break
     
         plt.plot(list(range(len(loss_iter))),(loss_iter))
+        plt.show()
         return(al)
         
         
@@ -948,8 +1057,63 @@ class funApproxModelNW(object):
     
         plt.plot(list(range(len(loss_iter))),(loss_iter))
         return(al)
-        
-        
+
+
+
+class NadarayaWatsonEstimator(object):
+    def __init__(self,la = 1,sigma = 1,Niter = None,score_param = 'normal',kernel = 'gaussian',c = 0,
+                 base = 'gaussian',mu_base = None,eta_base = None,eps = 0.001):
+        self.la = la
+        self.sigma = sigma
+        self.Niter = Niter
+        self.score_param = score_param
+        self.kernel = kernel
+        self.c = c
+        self.base = base
+        self.mu_base = mu_base
+        self.eta_base = eta_base
+        self.eps = eps
+#        self.target_norm = np.sqrt(la * 0.01)
+
+
+
+    def get_params(self, deep=True):
+        # suppose this estimator has parameters "alpha" and "recursive"
+        return {"la": self.la, "sigma": self.sigma,"Niter" : self.Niter,"score_param": self.score_param,
+                "kernel" : self.kernel,
+                "c" : self.c,
+                "base" : self.base,
+                "mu_base" : self.mu_base,
+                "eta_base" : self.eta_base,
+                "eps" : self.eps
+                }
+
+    def set_params(self, **parameters):
+        for parameter, value in parameters.items():
+            setattr(self, parameter, value)
+        return self
+
+    def fit(self,X,y = None):
+        self.kmodel = kernelModel(self.sigma, X, kernel=self.kernel, c=self.c, base=self.base, mu_base=self.mu_base,
+                                  eta_base=self.eta_base)
+        self.densityModel = densityModelNW(self.kmodel, self.la, eps= self.eps)
+
+
+        al = self.densityModel.FISTA(self.Niter)
+        self.al = al
+
+
+    def predict(self,X,y = None):
+        return self.kmodel.px(self.al, X)
+
+
+    def score(self,X,y = None):
+        p = self.kmodel.px(self.al, X)
+        if self.score_param == 'normal':
+            if (p <= 0).sum() > 0:
+                return -torch.tensor(np.inf)
+            else:
+                return (torch.log(p)).mean()
 
 ########################################################
 #
@@ -970,9 +1134,11 @@ class kernelExpoModel(object):
         elif kernel == 'gaussian':
             kernel_fun = KT.gaussianKernel(sigma)
             
-        kern_aux = lambda A,B :  KT.blockKernComp(A, B, kernel_fun, useGPU = useGPU, nmax_gpu = nmax_gpu)
+        def kern_aux(A,B):
+            return KT.blockKernComp(A, B, kernel_fun, useGPU = useGPU, nmax_gpu = nmax_gpu)
         if centered == False:
-            kern = lambda A : kern_aux(x,A)+c
+            def kern(A):
+                return kern_aux(x,A)+c
         else:
             K_0 = kern_aux(x,None)
             K_0m = K_0.mean(1)
@@ -1054,8 +1220,7 @@ class kernelExpoModel(object):
         int_estimate = self.lgrid*num_p.sum()
         rx = self.Rx(a,xtest)-mggrid
         return(torch.exp(rx)/int_estimate)
-    
-    
+
 class kernelExpoModelTer(object):
     def __init__(self,sigma,x,ngrid,kernel = 'gaussian',centered = False,c = 0,useGPU = False,nmax_gpu = None,base = 'gaussian',mu_base = 0,eta_base = 1):
         n = x.size(0)
@@ -1071,9 +1236,11 @@ class kernelExpoModelTer(object):
         elif kernel == 'gaussian':
             kernel_fun = KT.gaussianKernel(sigma)
             
-        kern_aux = lambda A,B :  KT.blockKernComp(A, B, kernel_fun, useGPU = useGPU, nmax_gpu = nmax_gpu)
+        def kern_aux(A,B):
+            return KT.blockKernComp(A, B, kernel_fun, useGPU = useGPU, nmax_gpu = nmax_gpu)
         if centered == False:
-            kern = lambda A : kern_aux(x,A)+c
+            def kern(A):
+                return kern_aux(x,A)+c
         else:
             K_0 = kern_aux(x,None)
             K_0m = K_0.mean(1)
@@ -1102,8 +1269,11 @@ class kernelExpoModelTer(object):
             mu_b = mu_base.view(d)
         
         if base == '1':
+
             volume = (2*eta_base)**d
-            self.nu =lambda x : (1 - ((x - mu_b.unsqueeze(0)) > eta_base).sum(1).double() - ((x - mu_b.unsqueeze(0)) < -eta_base).sum(1).double()).clamp(min=0)/volume
+            def nu(x):
+                return (1 - ((x - mu_b.unsqueeze(0)) > eta_base).sum(1).double() - ((x - mu_b.unsqueeze(0)) < -eta_base).sum(1).double()).clamp(min=0)/volume
+            self.nu = nu
             xgrid = mu_b.unsqueeze(0) + eta_base*(2*torch.rand((ngrid,d))-1)
         elif base == 'gaussian':
             def nu(x):
@@ -1171,11 +1341,7 @@ class kernelExpoModelTer(object):
         rx = self.Rx(a,xtest)-mggrid
         nux = self.nu(xtest)
         return(torch.exp(rx)*nux/int_estimate)
-        
 
-
-    
-    
 class kernelExpoModelBis(object):
     def __init__(self,sigma,x,ngrid,base_sampler,base_density,kernel = 'gaussian',centered = False,c = 0,useGPU = False,nmax_gpu = None):
         n = x.size(0)
@@ -1191,9 +1357,11 @@ class kernelExpoModelBis(object):
         elif kernel == 'gaussian':
             kernel_fun = KT.gaussianKernel(sigma)
             
-        kern_aux = lambda A,B :  KT.blockKernComp(A, B, kernel_fun, useGPU = useGPU, nmax_gpu = nmax_gpu)
+        def kern_aux(A,B):
+            return KT.blockKernComp(A, B, kernel_fun, useGPU = useGPU, nmax_gpu = nmax_gpu)
         if centered == False:
-            kern = lambda A : kern_aux(x,A)+c
+            def kern(A):
+                return kern_aux(x,A)+c
         else:
             K_0 = kern_aux(x,None)
             K_0m = K_0.mean(1)
@@ -1273,16 +1441,7 @@ class kernelExpoModelBis(object):
         rx = self.Rx(a,xtest)-mggrid
         nux = self.nu(xtest)
         return(torch.exp(rx)*nux/int_estimate)
-        
 
-            
-        
-    
-        
-        
-    
-    
-    
 class densityModelExpo(object):
     def __init__(self,kmodel,la,eps = 0.001):
         self.kmodel = kmodel
@@ -1352,4 +1511,6 @@ class densityModelExpo(object):
     
         plt.plot(list(range(len(loss_iter))),(loss_iter))
         return(al)
-    
+
+
+

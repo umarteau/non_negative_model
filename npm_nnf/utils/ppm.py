@@ -4,14 +4,18 @@ import torch
 torch.set_default_dtype(torch.float64)
 
 
-def produceDU(useGPU):
+def produceDU(useGPU = False):
     if useGPU:
-        return (lambda x : x.to('cpu'),lambda x : x.to('cuda')) 
+        def aux(x):
+            return x.to('cpu')
+        def aux2(x):
+            return x.to('cuda')
+
+        return (aux,aux2)
     else:
-        return (lambda x : x,lambda x : x)
-
-
-    
+        def aux(x):
+            return x
+        return (aux,aux)
 
 
 
