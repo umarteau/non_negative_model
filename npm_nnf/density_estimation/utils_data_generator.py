@@ -61,6 +61,35 @@ def generate2GaussianD(r,sigma,n,d):
     return res,density
 
 
+def generate3GaussianD(r,sigma1,sigma2,n,d):
+    mu1,mu2 = torch.zeros(d),torch.zeros(d)
+    mu1[0]+=r 
+    mu2[0] -= r
+    def density(x):
+        r1 = torch.exp(-((x-mu1.unsqueeze(0))**2).sum(1)/(2*sigma1**2) - d*np.log(2*np.pi*sigma1**2)/2)
+        r2 = torch.exp(-((x-mu2.unsqueeze(0))**2).sum(1)/(2*sigma2**2) - d*np.log(2*np.pi*sigma2**2)/2)
+        return  0.5*(r1 + r2)
+    def sample(np):
+        mask = torch.randint(2,(np,))
+        mask = mask.unsqueeze(1)
+        rs = torch.randn((np,d))
+        v1 = mu1.unsqueeze(0)+sigma1*rs
+        v2 = mu2.unsqueeze(0)+sigma2*rs
+        return mask*v1 + (1-mask)*v2
+    #xplot = torch.linspace(mu-3*sigma,mu+3*sigma,200)
+    #plt.plot(xplot,density(xplot))
+    res = sample(n)
+    nplot = 200
+    xplot = torch.zeros((nplot,d))
+    xplot[:,0] =  torch.linspace(min(-r-3*sigma2,r-3*sigma1),max(r + 3*sigma1,-r+3*sigma2),nplot)
+    plt.figure()
+    plt.plot(xplot[:,0],density(xplot))
+    plt.show()
+
+    #plt.scatter(res,density(res),marker = '+',color = 'r')
+    return res,density
+
+
 
 
 def generateUniform(a,b,n):
