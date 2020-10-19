@@ -960,7 +960,7 @@ class densityModel(object):
             while True:
                 c = 1/Lf
                 al1 = self.loss.Lsprox(c,add_l(al2,Ograd,-c))
-                if Gl_dual(Lf,al1) >=0:
+                if Gl_dual(Lf,al1) >=0 or Lf >= eta_Lf*self.smoothness:
 
                     break
                 else:
