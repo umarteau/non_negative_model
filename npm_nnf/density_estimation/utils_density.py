@@ -861,6 +861,10 @@ class densityModel(object):
     def px_dual(self,alpha,xtest):
         B = self.pfd(alpha)
         return self.lmodel.px(B,xtest)
+
+    def integral_dual(self,alpha):
+        B = self.pfd(alpha)
+        return self.lmodel.integral(B)
     
     def cb_prox(cobj,al):
         return None
@@ -960,7 +964,7 @@ class densityModel(object):
             while True:
                 c = 1/Lf
                 al1 = self.loss.Lsprox(c,add_l(al2,Ograd,-c))
-                if Gl_dual(Lf,al1) >=0 or Lf >= eta_Lf*self.smoothness:
+                if Gl_dual(Lf,al1) >=0 or Lf >= 2*eta_Lf*self.smoothness:
 
                     break
                 else:
@@ -1047,9 +1051,12 @@ class QuadraticEstimator(object):
 
     def score(self,X,y = None):
         p = self.dModel.px_dual(self.al, X)
+        integral = self.dModel.integral_dual(self.al)
+        if integral > 1.1 or integral < 0.9:
+            return np.nan
         if self.score_param == 'normal':
             if (p <= 0).sum() > 0:
-                return -torch.tensor(np.inf)
+                return np.nan
             else:
                 return (torch.log(p)).mean()
         
