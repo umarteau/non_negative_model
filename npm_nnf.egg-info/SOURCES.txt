@@ -5,6 +5,9 @@ npm_nnf.egg-info/PKG-INFO
 npm_nnf.egg-info/SOURCES.txt
 npm_nnf.egg-info/dependency_links.txt
 npm_nnf.egg-info/top_level.txt
+npm_nnf/density_estimation/__init__.py
+npm_nnf/density_estimation/utils_data_generator.py
+npm_nnf/density_estimation/utils_density.py
 npm_nnf/hetero_scedastic/HS_utils.py
 npm_nnf/hetero_scedastic/__init__.py
 npm_nnf/hetero_scedastic/data_generator.py
@@ -12,5 +15,9 @@ npm_nnf/quantile_regression/__init__.py
 npm_nnf/quantile_regression/data_generator.py
 npm_nnf/quantile_regression/utils_quantile.py
 npm_nnf/utils/__init__.py
+npm_nnf/utils/optimize_parameters.py
 npm_nnf/utils/ppm.py
+npm_nnf/utils/train.py
 npm_nnf/utils/utils_kernels.py
+npm_nnf/utils/utils_load.py
+npm_nnf/utils/utils_train.py

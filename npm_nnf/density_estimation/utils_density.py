@@ -3,6 +3,7 @@ import torch
 import npm_nnf.utils.utils_kernels as KT
 import matplotlib.pyplot as plt
 import npm_nnf.utils.ppm as ppm
+import pickle
 
 torch.set_default_dtype(torch.float64)
 
@@ -834,12 +835,12 @@ class logLikelihoodConstrained(object):
     
     
 class densityModel(object):
-    def __init__(self,reg,lmodel):
+    def __init__(self,reg,lmodel,is_plot = True):
         self.reg = reg
         self.lmodel = lmodel
         self.loss = logLikelihoodConstrained(lmodel.renorm)
         self.smoothness = self.reg.smoothness*self.lmodel.target_norm**2
-
+        self.is_plot = is_plot
     
     def F_primal(self,B):
         return self.loss.L(self.lmodel.R(B)) + self.reg.Omega(B)
@@ -915,7 +916,7 @@ class densityModel(object):
     
     def prox_method(self,Niter,cb = cb_prox,cobj = {}):
 
-
+        is_plot = self.is_plot
 
         if Niter == 'auto':
             is_auto = True
@@ -985,8 +986,9 @@ class densityModel(object):
                     break
 
         print(f'Integral tracker values : {it.count},{it.count_1}')
-        plt.plot(list(range(len(loss_iter))),(loss_iter))
-        plt.show()
+        if is_plot:
+            plt.plot(list(range(len(loss_iter))),(loss_iter))
+            plt.show()
         return(al)
 
 
@@ -995,7 +997,8 @@ class densityModel(object):
 class QuadraticEstimator(object):
     def __init__(self,la = 1,sigma = 1,Niter = None,score_param = 'normal',
                  mu = None,kernel = 'gaussian',centered = False,c = 0,
-                 base = 'gaussian',mu_base = None,eta_base = None):
+                 base = 'gaussian',mu_base = None,eta_base = None,is_plot = False,x_train = None,y_train = None,
+                 al = None):
         self.la = la
         self.sigma = sigma
         self.Niter = Niter
@@ -1007,6 +1010,11 @@ class QuadraticEstimator(object):
         self.base = base
         self.mu_base = mu_base
         self.eta_base = eta_base
+        self.is_plot = is_plot
+        self.x_train = x_train
+        self.y_train = y_train
+        self.al = al
+
 
 
 
@@ -1020,7 +1028,11 @@ class QuadraticEstimator(object):
                 "c" : self.c,
                 "base" : self.base,
                 "mu_base" : self.mu_base,
-                "eta_base" : self.eta_base
+                "eta_base" : self.eta_base,
+                "is_plot" : self.is_plot,
+                "al" : self.al,
+                "x_train" : self.x_train,
+                "y_train" : self.y_train
                 }
 
     def set_params(self, **parameters):
@@ -1040,9 +1052,11 @@ class QuadraticEstimator(object):
                            c=self.c, base=self.base, mu_base=self.mu_base,
                            eta_base=self.eta_base, target_norm=self.target_norm)
         self.regmodel = ENreg(self.la, self.mu)
-        self.dModel = densityModel(self.regmodel, self.lmodel)
+        self.dModel = densityModel(self.regmodel, self.lmodel,is_plot = self.is_plot)
         al = self.dModel.prox_method(self.Niter)
         self.al = al
+        self.x_train = X
+        self.y_train = y
 
 
     def predict(self,X,y = None):
@@ -1059,6 +1073,37 @@ class QuadraticEstimator(object):
                 return np.nan
             else:
                 return (torch.log(p)).mean()
+    def save(self,filename):
+        res = {"la": self.la, "sigma": self.sigma, "Niter": self.Niter, "score_param": self.score_param,
+         "mu": self.mu,
+         "kernel": self.kernel,
+         "centered": self.centered,
+         "c": self.c,
+         "base": self.base,
+         "mu_base": self.mu_base,
+         "eta_base": self.eta_base,
+         "is_plot": self.is_plot,
+         "al": self.al,
+         "x_train": self.x_train,
+         "y_train": self.y_train
+         }
+        pickle.dump(res,open(filename,"wb"))
+    def load(self,filename = None):
+        if not(isinstance(filename,type(None))):
+            p = pickle.load(open(filename, "rb"))
+            for parameter, value in p.items():
+                setattr(self, parameter, value)
+        if isinstance(self.mu,type(None)):
+            self.mu = self.la*0.01
+        self.target_norm = np.sqrt(self.mu)
+        self.lmodel = QKM2(self.sigma, self.x_train, kernel=self.kernel, centered=self.centered,
+                           c=self.c, base=self.base, mu_base=self.mu_base,
+                           eta_base=self.eta_base, target_norm=self.target_norm)
+        self.regmodel = ENreg(self.la, self.mu)
+        self.dModel = densityModel(self.regmodel, self.lmodel,is_plot = self.is_plot)
+
+
+
         
 
 ###########################################################
@@ -1188,7 +1233,7 @@ class kernelModel(object):
             
 
 class densityModelNW(object):
-    def __init__(self,kmodel,la,eps = 0.001):
+    def __init__(self,kmodel,la,eps = 0.001,is_plot = True):
         self.kmodel = kmodel
         n = kmodel.n
         self.lossmodel = loglossNW(eps)
@@ -1197,6 +1242,7 @@ class densityModelNW(object):
         self.c = la*kmodel.n
         self.constraint = kmodel.Sig/kmodel.renorm
         self.smoothness = n**2 * kmodel.ka**2/eps + n**2 * kmodel.ka*la
+        self.is_plot = is_plot
         
     def proj(self,x):
         a = self.constraint
@@ -1231,7 +1277,7 @@ class densityModelNW(object):
         return None
     
     def FISTA(self,Niter,cb = cb_prox,cobj = {}):
-
+        is_plot = self.is_plot
         if Niter == 'auto':
             is_auto = True
         else:
@@ -1291,14 +1337,14 @@ class densityModelNW(object):
                 if sst and it.check_int():
                     print(f"Finished after {i} iterations")
                     break
-    
-        plt.plot(list(range(len(loss_iter))),(loss_iter))
-        plt.show()
+        if is_plot:
+            plt.plot(list(range(len(loss_iter))),(loss_iter))
+            plt.show()
         return(al)
         
         
 class funApproxModelNW(object):
-    def __init__(self,kmodel,la,y):
+    def __init__(self,kmodel,la,y,is_plot = True):
         self.kmodel = kmodel
         n = kmodel.n
         self.lossmodel = squareloss(y)
@@ -1306,6 +1352,7 @@ class funApproxModelNW(object):
         
         self.c = la*kmodel.n
         self.smoothness = n**2 * kmodel.ka**2 + n**2 * kmodel.ka*la
+        self.is_plot = is_plot
         
     def proj(self,x):
     
@@ -1324,6 +1371,7 @@ class funApproxModelNW(object):
         return None
     
     def FISTA(self,Niter,cb = cb_prox,cobj = {}):
+        is_plot = self.is_plot
     
 
         def Gl(alpha):
@@ -1370,15 +1418,17 @@ class funApproxModelNW(object):
             al = al1
             tk = tk1
             cb(cobj,al)
-    
-        plt.plot(list(range(len(loss_iter))),(loss_iter))
+
+        if is_plot:
+            plt.plot(list(range(len(loss_iter))),(loss_iter))
+            plt.show()
         return(al)
 
 
 
 class NadarayaWatsonEstimator(object):
     def __init__(self,la = 1,sigma = 1,Niter = None,score_param = 'normal',kernel = 'gaussian',c = 0,
-                 base = 'gaussian',mu_base = None,eta_base = None,eps = 0.001):
+                 base = 'gaussian',mu_base = None,eta_base = None,eps = 0.001,is_plot = False):
         self.la = la
         self.sigma = sigma
         self.Niter = Niter
@@ -1389,7 +1439,7 @@ class NadarayaWatsonEstimator(object):
         self.mu_base = mu_base
         self.eta_base = eta_base
         self.eps = eps
-#        self.target_norm = np.sqrt(la * 0.01)
+        self.is_plot = is_plot
 
 
 
@@ -1401,7 +1451,8 @@ class NadarayaWatsonEstimator(object):
                 "base" : self.base,
                 "mu_base" : self.mu_base,
                 "eta_base" : self.eta_base,
-                "eps" : self.eps
+                "eps" : self.eps,
+                "is_plot" : self.is_plot
                 }
 
     def set_params(self, **parameters):
@@ -1413,7 +1464,7 @@ class NadarayaWatsonEstimator(object):
         print(f'sigma = {self.sigma}, lambda = {self.la}')
         self.kmodel = kernelModel(self.sigma, X, kernel=self.kernel, c=self.c, base=self.base, mu_base=self.mu_base,
                                   eta_base=self.eta_base)
-        self.densityModel = densityModelNW(self.kmodel, self.la, eps= self.eps)
+        self.densityModel = densityModelNW(self.kmodel, self.la, eps= self.eps,is_plot=self.is_plot)
 
 
         al = self.densityModel.FISTA(self.Niter)

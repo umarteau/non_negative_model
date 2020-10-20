@@ -368,7 +368,7 @@ def save_version(info,path,model = None,version = None,extension = 'pickle'):
     return None
 
 def perform_study(model, X,fixed_params = {}, variable_params = {} , y = None,cv= 5, prune = False,
-                  n_trials = 1,save_path = None,version = None,eta = 0,n_jobs = 1,gs_algo = 'optuna'):
+                  n_trials = 1,file_path = "",file_name = "",eta = 0,n_jobs = 1,gs_algo = 'optuna'):
     if prune == True:
         prun = PrunedCV_altered(cv,0.05,minimize = True)
     if gs_algo == 'optuna':
@@ -408,12 +408,15 @@ def perform_study(model, X,fixed_params = {}, variable_params = {} , y = None,cv
         best_parameters = study.best_params
         for key in fixed_params.keys():
             best_parameters[key] = fixed_params[key]
-        result = {'best_parameters' : best_parameters, 'trials_df' : study.trials_dataframe()}
+        res_model = model(**best_parameters)
+        res_model.fit(X,y=y)
+        d = res_model.get_params()
+        result = {'best_parameters' : d, 'trials_df' : study.trials_dataframe()}
 
     elif gs_algo == 'gs_sklearn':
         raise Exception("not done yet")
 
-    save_version(result,save_path,model = model,version =version)
+    pickle.dump(result,open(os.path.join(file_path,file_name), 'wb'))
     return study
 
 def get_results(path,model = None,version = None,extension = 'pickle'):
