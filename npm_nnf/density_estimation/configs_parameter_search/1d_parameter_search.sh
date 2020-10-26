@@ -1,0 +1,5 @@
+conda activate p36;
+python /Users/ulyssemarteau/Desktop/NIPS/Experiments/npm_nnf/npm_nnf/utils/optimize_parameters.py  -c /Users/ulyssemarteau/Desktop/NIPS/Experiments/npm_nnf/npm_nnf/density_estimation/configs_parameter_search/config_1d_our_method.json;
+python /Users/ulyssemarteau/Desktop/NIPS/Experiments/npm_nnf/npm_nnf/utils/optimize_parameters.py  -c /Users/ulyssemarteau/Desktop/NIPS/Experiments/npm_nnf/npm_nnf/density_estimation/configs_parameter_search/config_1d_nw_method.json;
+python /Users/ulyssemarteau/Desktop/NIPS/Experiments/npm_nnf/npm_nnf/utils/optimize_parameters.py  -c /Users/ulyssemarteau/Desktop/NIPS/Experiments/npm_nnf/npm_nnf/density_estimation/configs_parameter_search/config_1d_linear_method.json;
+python /Users/ulyssemarteau/Desktop/NIPS/Experiments/npm_nnf/npm_nnf/utils/optimize_parameters.py  -c /Users/ulyssemarteau/Desktop/NIPS/Experiments/npm_nnf/npm_nnf/density_estimation/configs_parameter_search/config_1d_glm_method.json

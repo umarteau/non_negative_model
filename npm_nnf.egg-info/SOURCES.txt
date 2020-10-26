@@ -6,8 +6,9 @@ npm_nnf.egg-info/SOURCES.txt
 npm_nnf.egg-info/dependency_links.txt
 npm_nnf.egg-info/top_level.txt
 npm_nnf/density_estimation/__init__.py
-npm_nnf/density_estimation/utils_data_generator.py
+npm_nnf/density_estimation/utils_data.py
 npm_nnf/density_estimation/utils_density.py
+npm_nnf/density_estimation/utils_density2.py
 npm_nnf/hetero_scedastic/HS_utils.py
 npm_nnf/hetero_scedastic/__init__.py
 npm_nnf/hetero_scedastic/data_generator.py

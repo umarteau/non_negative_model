@@ -31,9 +31,9 @@ def load_data(data):
     file_path = data['save_path']
     file_name = data['save_name']
     model_name = data['model'][1]
-    X = torch.load(os.path.join(data['data_set_path'], data['data_set_file']))
-    n = X.size(0)
-    d = X.size(1)
+    ds = pickle.load(open(os.path.join(data['data_set_path'], data['data_set_file']),'rb'))
+    n = ds.X.size(0)
+    d = ds.X.size(1)
     file_name = f'{file_name}_{model_name}_dimension{d}_datasetsize{n}'
     if isinstance(version, type(None)):
         version = 0
@@ -51,5 +51,5 @@ def load_data(data):
     if "best_parameters" in model_version:
         clf.set_params(**model_version['best_parameters'])
     clf.load()
-    return clf
+    return (clf,ds)
 

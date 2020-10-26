@@ -1,0 +1,26 @@
+{
+  "data_set_path" : "/Users/ulyssemarteau/Desktop/NIPS/Experiments/npm_nnf/npm_nnf/density_estimation/data_sets",
+  "data_set_file" : "experiment_1d.pickle",
+  "fixed_parameters" :  {
+    "Niter" : null,
+    "stype" : "dg",
+    "mu_base" : 0,
+    "eta_base" : 5,
+    "base" : "gaussian",
+    "sigma" : 1,
+    "tol_int" : 1e-2
+  },
+  "variable_parameters" : {
+    "la" : {"type" :  "loguniform", "min" : 1e-6 , "max" : 1e0 },
+    "mu" : {"type" :  "loguniform", "min" : 1e-7 , "max" : 1e-1 }
+  },
+  "model" : ["npm_nnf.density_estimation.utils_density2","QuadraticEstimator" ],
+  "save_path" : "/Users/ulyssemarteau/Desktop/NIPS/Experiments/npm_nnf/npm_nnf/density_estimation/models",
+  "save_name" : "density_estimation",
+  "n_jobs": 5,
+  "version" : 1,
+  "eta" : 0,
+  "prune" : false,
+  "cv" : 5,
+  "n_trials" : 30
+}

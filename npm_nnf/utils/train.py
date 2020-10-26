@@ -26,10 +26,6 @@ warnings.filterwarnings('ignore')
 import sys
 import matplotlib.pyplot as plt
 plt.style.use('seaborn-whitegrid')
-import logging
-logging.basicConfig(level=logging.NOTSET,format='%(asctime)s  %(name)s %(levelname)s %(message)s')
-logger = logging.getLogger('ROOT')
-logger.setLevel(logging.INFO)
 
 
 
@@ -46,7 +42,7 @@ torch.set_default_dtype(torch.float64)
 
 def main(argv):
    n_jobs = None
-   ds = None
+   X = None
    try:
       opts, args = getopt.getopt(argv,"hc:nd",["config=","njobs=","dataset="])
    except getopt.GetoptError:
@@ -62,42 +58,29 @@ def main(argv):
       elif opt in ("-n","--njobs"):
          n_jobs = arg
       elif opt in ("-d","--dataset"):
-         ds = pickle.load(open(arg,'rb'))
-   if isinstance(ds,type(None)):
-      ds = pickle.load(open(os.path.join(data['data_set_path'],data['data_set_file']),'rb'))
-
-   d = ds.X.size(1)
-   n = ds.X.size(0)
+         X = torch.load(arg)
+   if isinstance(X,type(None)):
+      X = torch.load(os.path.join(data['data_set_path'],data['data_set_file']))
+   d = X.size(1)
+   n = X.size(0)
    if isinstance(n_jobs,type(None)):
       n_jobs = data["n_jobs"]
    version = data["version"]
    eta = data["eta"]
    cv = data["cv"]
-   file_path = data['save_path']
-   file_name = data['save_name']
-   model_name = data['model'][1]
-   file_name = f'{file_name}_{model_name}_dimension{d}_datasetsize{n}'
-   if isinstance(version,type(None)):
-      version = 0
-      while os.path.isfile(os.path.join(file_path,f'{file_name}_{version+1}.pickle')):
-         version += 1
-      version += 1
-   file_name = f'{file_name}_{version}.pickle'
-
-   prune = data["prune"]
-   n_trials = data["n_trials"]
+   save_path  = data["save_path"]
    iii = importlib.import_module(data['model'][0])
-   model = getattr(iii,model_name)
-   fixed_params = data['fixed_parameters']
+   model = getattr(iii,data['model'][1])
+
+   params = data['parameters']
    if "mu_base" in fixed_params.keys():
       if isinstance(fixed_params['mu_base'],int):
          fixed_params['mu_base'] = torch.zeros((d,))
-   variable_params = {}
-   for key,value in data['variable_parameters'].items():
-      variable_params[key] = [value["type"],value["min"],value["max"]]
-   utils_train.perform_study(model, ds, fixed_params=fixed_params, variable_params=variable_params, cv=cv,
+
+
+   utils_train.perform_study(model, X, fixed_params=fixed_params, variable_params=variable_params, cv=cv,
                                    prune=prune,
-                                   n_trials=n_trials, file_path=file_path, file_name = file_name, eta=eta, n_jobs=n_jobs)
+                                   n_trials=n_trials, save_path=save_path, version=version, eta=eta, n_jobs=n_jobs)
 
 
 

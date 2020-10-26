@@ -12,6 +12,13 @@ import optuna
 optuna.logging.set_verbosity(0)
 
 import warnings
+import logging
+logging.basicConfig(level=logging.NOTSET,format='%(asctime)s  %(name)s %(levelname)s %(message)s')
+
+logger = logging.getLogger('ROOT')
+logger.setLevel(logging.INFO)
+
+
 warnings.filterwarnings('ignore')
 
 import sys
@@ -21,7 +28,7 @@ plt.style.use('seaborn-whitegrid')
 
 import npm_nnf.utils.utils_kernels as KT
 import npm_nnf.density_estimation.utils_density as utils
-import npm_nnf.density_estimation.utils_data_generator as generators
+import npm_nnf.density_estimation.utils_data as generators
 
 from sklearn.model_selection import KFold, StratifiedKFold, ParameterGrid, ParameterSampler
 from sklearn import metrics
@@ -367,7 +374,7 @@ def save_version(info,path,model = None,version = None,extension = 'pickle'):
     pickle.dump(info, open(filename, 'wb'))
     return None
 
-def perform_study(model, X,fixed_params = {}, variable_params = {} , y = None,cv= 5, prune = False,
+def perform_study(model, ds,fixed_params = {}, variable_params = {} ,cv= 5, prune = False,
                   n_trials = 1,file_path = "",file_name = "",eta = 0,n_jobs = 1,gs_algo = 'optuna'):
     if prune == True:
         prun = PrunedCV_altered(cv,0.05,minimize = True)
@@ -386,21 +393,27 @@ def perform_study(model, X,fixed_params = {}, variable_params = {} , y = None,cv
                 else:
                     raise Exception("not done yet : set new possibilities for keys")
             res = model(**param)
+
+            logger.info("STARTING TRIAL : " + " -- ".join([f'{key} : {param[key]}' for key in  variable_params.keys()]))
+
             if prune == True:
-                score = prun.cross_val_score(res, X,y=y)
-                print("here we are ")
-                print(score)
-                print(prun.current_splits_def)
+                score = prun.cross_val_score(res, ds.X,y=ds.y)
+
                 scores = prun.current_splits_def
 
 
             else:
-                scores = -cross_val_score(res,X,y=y,cv = cv)
+                scores = -cross_val_score(res,ds.X,y=ds.y,cv = cv)
+
                 score = scores.mean()
+
             std = scores.std()
             trial.set_user_attr('accuracy',scores.mean())
             trial.set_user_attr('std',scores.std())
             trial.set_user_attr('scores',scores)
+
+            logger.info("ENDING TRIAL : " + " -- ".join([f'{key} : {param[key]}' for key in variable_params.keys()]))
+
             return score+eta*std
         study = optuna.create_study(direction = "minimize")
         study.optimize(objective,
@@ -409,9 +422,10 @@ def perform_study(model, X,fixed_params = {}, variable_params = {} , y = None,cv
         for key in fixed_params.keys():
             best_parameters[key] = fixed_params[key]
         res_model = model(**best_parameters)
-        res_model.fit(X,y=y)
+        res_model.fit(ds.X,y=ds.y)
+
         d = res_model.get_params()
-        result = {'best_parameters' : d, 'trials_df' : study.trials_dataframe()}
+        result = {'best_parameters' : d, 'trials_df' : study.trials_dataframe(),'dataset' : ds}
 
     elif gs_algo == 'gs_sklearn':
         raise Exception("not done yet")
