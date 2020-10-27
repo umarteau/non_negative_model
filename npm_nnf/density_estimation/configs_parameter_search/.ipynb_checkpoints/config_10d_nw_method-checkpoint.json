@@ -1,0 +1,25 @@
+{
+  "data_set_path" : "/sequoia/data1/umarteau/Experiments/NIPS2020final/nips_2020_non_negative_model_for_non_negative_functions/npm_nnf/density_estimation/data_sets",
+  "data_set_file" : "experiment_10d.pickle",
+  "fixed_parameters" :  {
+    "Niter" : null,
+    "stype" : "auto",
+    "mu_base" : 0,
+    "eta_base" : 5,
+    "base" : "gaussian",
+    "sigma" : 1
+  },
+  "variable_parameters" : {
+    "la" : {"type" :  "loguniform", "min" : 1e-6 , "max" : 1e0 },
+    "sigma" : {"type" :  "uniform","min" :  0.1,"max" :  1}
+  },
+  "model" : ["npm_nnf.density_estimation.utils_density2","NadarayaWatsonEstimator" ],
+  "save_path" : "/sequoia/data1/umarteau/Experiments/NIPS2020final/nips_2020_non_negative_model_for_non_negative_functions/npm_nnf/density_estimation/models",
+  "save_name" : "density_estimation",
+  "n_jobs": 10,
+  "version" : 1,
+  "eta" : 0,
+  "prune" : false,
+  "cv" : 5,
+  "n_trials" : 10
+}
