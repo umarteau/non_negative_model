@@ -6,8 +6,7 @@
     "stype" : "auto",
     "mu_base" : 0,
     "eta_base" : 5,
-    "base" : "gaussian",
-    "sigma" : 1
+    "base" : "gaussian"
   },
   "variable_parameters" : {
     "la" : {"type" :  "loguniform", "min" : 1e-6 , "max" : 1e0 },

@@ -420,7 +420,8 @@ def perform_study(model, ds,fixed_params = {}, variable_params = {} ,cv= 5, prun
                    n_trials=n_trials, show_progress_bar=True, n_jobs=n_jobs)
         best_parameters = study.best_params
         for key in fixed_params.keys():
-            best_parameters[key] = fixed_params[key]
+            if not (key in best_parameters.keys()):
+                best_parameters[key] = fixed_params[key]
         res_model = model(**best_parameters)
         res_model.fit(ds.X,y=ds.y)
 
