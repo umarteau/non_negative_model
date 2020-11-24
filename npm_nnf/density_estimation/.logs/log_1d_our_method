@@ -1,0 +1,263 @@
+[32m[I 2020-11-24 13:59:54,398][0m A new study created in memory with name: no-name-220efdb4-f99b-402a-a154-95ed4ca4d7b5[0m
+2020-11-24 13:59:54,405  ROOT INFO STARTING TRIAL : la : 0.07444976070561857 -- mu : 6.195756246374575e-07
+2020-11-24 13:59:54,406  ROOT INFO STARTING TRIAL : la : 0.034548404387290045 -- mu : 0.04838115185196593
+2020-11-24 13:59:54,408  ROOT INFO STARTING TRIAL : la : 4.222109439458633e-06 -- mu : 0.00025087193106121684
+2020-11-24 13:59:54,411  ROOT INFO STARTING TRIAL : la : 2.1245683506943207e-06 -- mu : 0.02662026912280388
+2020-11-24 13:59:54,411  ROOT INFO STARTING TRIAL : la : 3.1361229475666456e-05 -- mu : 1.1457614406752692e-07
+2020-11-24 13:59:54,757  root INFO optimization stopped after dual gap reached 0.01, iteration : 16
+2020-11-24 13:59:54,765  ROOT INFO finished optimization with dual gap : tensor([[0.0040]]), loss : tensor([[0.1211]]), integral : 0.9953913241755552
+2020-11-24 13:59:54,821  root INFO optimization stopped after dual gap reached 0.01, iteration : 20
+2020-11-24 13:59:54,824  ROOT INFO finished optimization with dual gap : tensor([[0.0037]]), loss : tensor([[-0.0516]]), integral : 0.9970137097662883
+2020-11-24 13:59:55,094  root INFO optimization stopped after dual gap reached 0.01, iteration : 16
+2020-11-24 13:59:55,097  ROOT INFO finished optimization with dual gap : tensor([[0.0042]]), loss : tensor([[0.1196]]), integral : 0.9949648997970488
+2020-11-24 13:59:55,200  root INFO optimization stopped after dual gap reached 0.01, iteration : 20
+2020-11-24 13:59:55,204  ROOT INFO finished optimization with dual gap : tensor([[0.0045]]), loss : tensor([[-0.0530]]), integral : 0.9968421800733123
+2020-11-24 13:59:55,430  root INFO optimization stopped after dual gap reached 0.01, iteration : 16
+2020-11-24 13:59:55,432  ROOT INFO finished optimization with dual gap : tensor([[0.0025]]), loss : tensor([[0.1371]]), integral : 0.997340998055109
+2020-11-24 13:59:55,586  root INFO optimization stopped after dual gap reached 0.01, iteration : 20
+2020-11-24 13:59:55,589  ROOT INFO finished optimization with dual gap : tensor([[0.0017]]), loss : tensor([[-0.0288]]), integral : 0.9996775833028869
+2020-11-24 13:59:55,754  root INFO optimization stopped after dual gap reached 0.01, iteration : 16
+2020-11-24 13:59:55,757  ROOT INFO finished optimization with dual gap : tensor([[0.0041]]), loss : tensor([[0.1255]]), integral : 0.9951593831490267
+2020-11-24 13:59:55,969  root INFO optimization stopped after dual gap reached 0.01, iteration : 20
+2020-11-24 13:59:55,972  ROOT INFO finished optimization with dual gap : tensor([[0.0039]]), loss : tensor([[-0.0461]]), integral : 0.9969866856257692
+2020-11-24 13:59:56,081  root INFO optimization stopped after dual gap reached 0.01, iteration : 16
+2020-11-24 13:59:56,084  ROOT INFO finished optimization with dual gap : tensor([[0.0050]]), loss : tensor([[0.1028]]), integral : 0.9935357306409869
+2020-11-24 13:59:56,088  ROOT INFO ENDING TRIAL : la : 0.034548404387290045 -- mu : 0.04838115185196593
+[32m[I 2020-11-24 13:59:56,089][0m Trial 1 finished with value: 1.1765992898558302 and parameters: {'la': 0.034548404387290045, 'mu': 0.04838115185196593}. Best is trial 1 with value: 1.1765992898558302.[0m
+2020-11-24 13:59:56,090  ROOT INFO STARTING TRIAL : la : 2.857805107478368e-06 -- mu : 1.795631014105701e-07
+2020-11-24 13:59:56,333  root INFO optimization stopped after dual gap reached 0.01, iteration : 19
+2020-11-24 13:59:56,336  ROOT INFO finished optimization with dual gap : tensor([[6.7509e-05]]), loss : tensor([[-0.0735]]), integral : 1.0023139786056603
+2020-11-24 13:59:56,340  ROOT INFO ENDING TRIAL : la : 2.1245683506943207e-06 -- mu : 0.02662026912280388
+[32m[I 2020-11-24 13:59:56,340][0m Trial 3 finished with value: 1.0906714513652351 and parameters: {'la': 2.1245683506943207e-06, 'mu': 0.02662026912280388}. Best is trial 3 with value: 1.0906714513652351.[0m
+2020-11-24 13:59:56,342  ROOT INFO STARTING TRIAL : la : 0.021033635119334787 -- mu : 8.38867665430717e-05
+2020-11-24 13:59:56,939  root INFO optimization stopped after dual gap reached 0.01, iteration : 178
+2020-11-24 13:59:56,942  ROOT INFO finished optimization with dual gap : tensor([[0.0035]]), loss : tensor([[-0.2888]]), integral : 1.0090076941214103
+2020-11-24 13:59:59,357  root INFO optimization stopped after dual gap reached 0.01, iteration : 175
+2020-11-24 13:59:59,360  ROOT INFO finished optimization with dual gap : tensor([[0.0023]]), loss : tensor([[-0.2927]]), integral : 1.009752522030902
+2020-11-24 14:00:01,082  root INFO optimization stopped after dual gap reached 0.01, iteration : 351
+2020-11-24 14:00:01,084  ROOT INFO finished optimization with dual gap : tensor([[0.0001]]), loss : tensor([[-0.1528]]), integral : 1.0049400561707016
+2020-11-24 14:00:01,846  root INFO optimization stopped after dual gap reached 0.01, iteration : 179
+2020-11-24 14:00:01,849  ROOT INFO finished optimization with dual gap : tensor([[0.0007]]), loss : tensor([[-0.2566]]), integral : 1.0098225059408674
+2020-11-24 14:00:04,348  root INFO optimization stopped after dual gap reached 0.01, iteration : 176
+2020-11-24 14:00:04,351  ROOT INFO finished optimization with dual gap : tensor([[0.0034]]), loss : tensor([[-0.2827]]), integral : 1.009510306282453
+2020-11-24 14:00:05,812  root INFO optimization stopped after dual gap reached 0.01, iteration : 345
+2020-11-24 14:00:05,816  ROOT INFO finished optimization with dual gap : tensor([[0.0004]]), loss : tensor([[-0.1521]]), integral : 1.0069096832409963
+2020-11-24 14:00:07,028  root INFO optimization stopped after dual gap reached 0.01, iteration : 185
+2020-11-24 14:00:07,031  ROOT INFO finished optimization with dual gap : tensor([[0.0007]]), loss : tensor([[-0.3296]]), integral : 1.0068409505741474
+2020-11-24 14:00:07,036  ROOT INFO ENDING TRIAL : la : 4.222109439458633e-06 -- mu : 0.00025087193106121684
+[32m[I 2020-11-24 14:00:07,036][0m Trial 2 finished with value: 0.959592835985891 and parameters: {'la': 4.222109439458633e-06, 'mu': 0.00025087193106121684}. Best is trial 2 with value: 0.959592835985891.[0m
+2020-11-24 14:00:07,038  ROOT INFO STARTING TRIAL : la : 0.0010257152570430368 -- mu : 0.036847106170304365
+2020-11-24 14:00:07,398  root INFO optimization stopped after dual gap reached 0.01, iteration : 17
+2020-11-24 14:00:07,402  ROOT INFO finished optimization with dual gap : tensor([[0.0015]]), loss : tensor([[-0.0112]]), integral : 0.9996359573439008
+2020-11-24 14:00:07,769  root INFO optimization stopped after dual gap reached 0.01, iteration : 17
+2020-11-24 14:00:07,772  ROOT INFO finished optimization with dual gap : tensor([[0.0021]]), loss : tensor([[-0.0129]]), integral : 0.9993197646638696
+2020-11-24 14:00:08,153  root INFO optimization stopped after dual gap reached 0.01, iteration : 18
+2020-11-24 14:00:08,156  ROOT INFO finished optimization with dual gap : tensor([[0.0051]]), loss : tensor([[0.0094]]), integral : 0.9945461303750434
+2020-11-24 14:00:08,526  root INFO optimization stopped after dual gap reached 0.01, iteration : 17
+2020-11-24 14:00:08,529  ROOT INFO finished optimization with dual gap : tensor([[0.0017]]), loss : tensor([[-0.0063]]), integral : 0.9995005099053996
+2020-11-24 14:00:08,890  root INFO optimization stopped after dual gap reached 0.01, iteration : 17
+2020-11-24 14:00:08,893  ROOT INFO finished optimization with dual gap : tensor([[0.0030]]), loss : tensor([[-0.0315]]), integral : 0.9974170741047903
+2020-11-24 14:00:08,898  ROOT INFO ENDING TRIAL : la : 0.0010257152570430368 -- mu : 0.036847106170304365
+[32m[I 2020-11-24 14:00:08,898][0m Trial 7 finished with value: 1.118767328358895 and parameters: {'la': 0.0010257152570430368, 'mu': 0.036847106170304365}. Best is trial 2 with value: 0.959592835985891.[0m
+2020-11-24 14:00:08,900  ROOT INFO STARTING TRIAL : la : 2.4727378358454497e-05 -- mu : 0.001548870254090482
+2020-11-24 14:00:10,069  root INFO optimization stopped after dual gap reached 0.01, iteration : 74
+2020-11-24 14:00:10,073  ROOT INFO finished optimization with dual gap : tensor([[0.0013]]), loss : tensor([[-0.2537]]), integral : 1.0060814213058498
+2020-11-24 14:00:11,067  root INFO optimization stopped after dual gap reached 0.01, iteration : 354
+2020-11-24 14:00:11,070  ROOT INFO finished optimization with dual gap : tensor([[0.0002]]), loss : tensor([[-0.1214]]), integral : 1.0048020044260686
+2020-11-24 14:00:11,208  root INFO optimization stopped after dual gap reached 0.01, iteration : 73
+2020-11-24 14:00:11,212  ROOT INFO finished optimization with dual gap : tensor([[0.0012]]), loss : tensor([[-0.2542]]), integral : 1.006817307408267
+2020-11-24 14:00:12,355  root INFO optimization stopped after dual gap reached 0.01, iteration : 75
+2020-11-24 14:00:12,358  ROOT INFO finished optimization with dual gap : tensor([[0.0009]]), loss : tensor([[-0.2221]]), integral : 1.005195558303319
+2020-11-24 14:00:13,525  root INFO optimization stopped after dual gap reached 0.01, iteration : 73
+2020-11-24 14:00:13,527  ROOT INFO finished optimization with dual gap : tensor([[0.0004]]), loss : tensor([[-0.2467]]), integral : 1.0074686675814954
+2020-11-24 14:00:14,706  root INFO optimization stopped after dual gap reached 0.01, iteration : 73
+2020-11-24 14:00:14,709  ROOT INFO finished optimization with dual gap : tensor([[0.0005]]), loss : tensor([[-0.2878]]), integral : 1.0049374384205676
+2020-11-24 14:00:14,713  ROOT INFO ENDING TRIAL : la : 2.4727378358454497e-05 -- mu : 0.001548870254090482
+[32m[I 2020-11-24 14:00:14,714][0m Trial 8 finished with value: 0.9686955497043194 and parameters: {'la': 2.4727378358454497e-05, 'mu': 0.001548870254090482}. Best is trial 2 with value: 0.959592835985891.[0m
+2020-11-24 14:00:14,715  ROOT INFO STARTING TRIAL : la : 0.00013754974070109006 -- mu : 0.00013347858435562912
+2020-11-24 14:00:16,244  root INFO optimization stopped after dual gap reached 0.01, iteration : 348
+2020-11-24 14:00:16,247  ROOT INFO finished optimization with dual gap : tensor([[0.0003]]), loss : tensor([[-0.1451]]), integral : 1.005567870539676
+2020-11-24 14:00:18,339  root INFO optimization stopped after dual gap reached 0.01, iteration : 242
+2020-11-24 14:00:18,343  ROOT INFO finished optimization with dual gap : tensor([[0.0042]]), loss : tensor([[-0.2936]]), integral : 1.009633852323516
+2020-11-24 14:00:21,575  root INFO optimization stopped after dual gap reached 0.01, iteration : 362
+2020-11-24 14:00:21,578  ROOT INFO finished optimization with dual gap : tensor([[0.0004]]), loss : tensor([[-0.1819]]), integral : 1.00476820449616
+2020-11-24 14:00:21,584  ROOT INFO ENDING TRIAL : la : 0.021033635119334787 -- mu : 8.38867665430717e-05
+[32m[I 2020-11-24 14:00:21,584][0m Trial 6 finished with value: 0.9816986403263795 and parameters: {'la': 0.021033635119334787, 'mu': 8.38867665430717e-05}. Best is trial 2 with value: 0.959592835985891.[0m
+2020-11-24 14:00:21,586  ROOT INFO STARTING TRIAL : la : 0.002367425918470687 -- mu : 8.790774686669131e-07
+2020-11-24 14:00:21,876  root INFO optimization stopped after dual gap reached 0.01, iteration : 239
+2020-11-24 14:00:21,879  ROOT INFO finished optimization with dual gap : tensor([[0.0037]]), loss : tensor([[-0.2987]]), integral : 1.0093513016323574
+2020-11-24 14:00:25,785  root INFO optimization stopped after dual gap reached 0.01, iteration : 257
+2020-11-24 14:00:25,788  ROOT INFO finished optimization with dual gap : tensor([[0.0022]]), loss : tensor([[-0.2606]]), integral : 1.0093223292115237
+2020-11-24 14:00:29,503  root INFO optimization stopped after dual gap reached 0.01, iteration : 252
+2020-11-24 14:00:29,506  ROOT INFO finished optimization with dual gap : tensor([[0.0050]]), loss : tensor([[-0.2876]]), integral : 1.0091812721026328
+2020-11-24 14:00:33,177  root INFO optimization stopped after dual gap reached 0.01, iteration : 239
+2020-11-24 14:00:33,179  ROOT INFO finished optimization with dual gap : tensor([[0.0002]]), loss : tensor([[-0.3363]]), integral : 1.008158453543785
+2020-11-24 14:00:33,185  ROOT INFO ENDING TRIAL : la : 0.00013754974070109006 -- mu : 0.00013347858435562912
+[32m[I 2020-11-24 14:00:33,186][0m Trial 9 finished with value: 0.9584606242012976 and parameters: {'la': 0.00013754974070109006, 'mu': 0.00013347858435562912}. Best is trial 9 with value: 0.9584606242012976.[0m
+2020-11-24 14:00:33,187  ROOT INFO STARTING TRIAL : la : 0.00032798941676156584 -- mu : 1.9115549381441843e-06
+2020-11-24 14:00:54,376  root INFO optimization stopped after dual gap reached 0.01, iteration : 4155
+2020-11-24 14:00:54,378  ROOT INFO finished optimization with dual gap : tensor([[1.5282e-05]]), loss : tensor([[0.0945]]), integral : 1.0035581443075345
+2020-11-24 14:01:11,376  root INFO optimization stopped after dual gap reached 0.01, iteration : 3340
+2020-11-24 14:01:11,379  ROOT INFO finished optimization with dual gap : tensor([[0.0023]]), loss : tensor([[-0.2728]]), integral : 1.0099788257215392
+2020-11-24 14:01:35,324  root INFO optimization stopped after dual gap reached 0.01, iteration : 4097
+2020-11-24 14:01:35,327  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.2999]]), integral : 0.9927713586719756
+2020-11-24 14:01:54,322  root INFO optimization stopped after dual gap reached 0.01, iteration : 3968
+2020-11-24 14:01:54,325  ROOT INFO finished optimization with dual gap : tensor([[0.0020]]), loss : tensor([[0.0945]]), integral : 1.00997730957235
+2020-11-24 14:02:01,343  root INFO optimization stopped after dual gap reached 0.01, iteration : 3306
+2020-11-24 14:02:01,347  ROOT INFO finished optimization with dual gap : tensor([[0.0014]]), loss : tensor([[-0.2748]]), integral : 1.0099821037357704
+2020-11-24 14:02:32,946  root INFO optimization stopped after dual gap reached 0.01, iteration : 3781
+2020-11-24 14:02:32,949  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3116]]), integral : 0.9928512035585151
+2020-11-24 14:02:51,631  root INFO optimization stopped after dual gap reached 0.01, iteration : 3367
+2020-11-24 14:02:51,634  ROOT INFO finished optimization with dual gap : tensor([[5.3344e-06]]), loss : tensor([[-0.2415]]), integral : 1.009936997718993
+2020-11-24 14:02:51,793  root INFO optimization stopped after dual gap reached 0.01, iteration : 3852
+2020-11-24 14:02:51,796  ROOT INFO finished optimization with dual gap : tensor([[8.0675e-06]]), loss : tensor([[0.1244]]), integral : 1.009765966873024
+2020-11-24 14:03:06,898  root INFO optimization stopped after dual gap reached 0.01, iteration : 2264
+2020-11-24 14:03:06,900  ROOT INFO finished optimization with dual gap : tensor([[0.0082]]), loss : tensor([[-0.2724]]), integral : 1.0099554986703734
+2020-11-24 14:03:14,528  root INFO optimization stopped after dual gap reached 0.01, iteration : 13185
+2020-11-24 14:03:14,531  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3388]]), integral : 1.0015535537010354
+2020-11-24 14:03:41,582  root INFO optimization stopped after dual gap reached 0.01, iteration : 3315
+2020-11-24 14:03:41,584  ROOT INFO finished optimization with dual gap : tensor([[0.0023]]), loss : tensor([[-0.2661]]), integral : 1.0099537417690427
+2020-11-24 14:03:51,958  root INFO optimization stopped after dual gap reached 0.01, iteration : 4015
+2020-11-24 14:03:51,962  ROOT INFO finished optimization with dual gap : tensor([[1.4209e-05]]), loss : tensor([[0.1022]]), integral : 1.0075128677837404
+2020-11-24 14:04:00,980  root INFO optimization stopped after dual gap reached 0.01, iteration : 16428
+2020-11-24 14:04:00,983  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3300]]), integral : 0.9977138170975287
+2020-11-24 14:04:05,000  root INFO optimization stopped after dual gap reached 0.01, iteration : 3843
+2020-11-24 14:04:05,004  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.2932]]), integral : 0.9930254301102273
+2020-11-24 14:04:33,483  root INFO optimization stopped after dual gap reached 0.01, iteration : 3489
+2020-11-24 14:04:33,487  ROOT INFO finished optimization with dual gap : tensor([[2.8469e-05]]), loss : tensor([[-0.3118]]), integral : 1.0071656261845139
+2020-11-24 14:04:33,507  ROOT INFO ENDING TRIAL : la : 0.002367425918470687 -- mu : 8.790774686669131e-07
+[32m[I 2020-11-24 14:04:33,508][0m Trial 10 finished with value: 0.9640313511419455 and parameters: {'la': 0.002367425918470687, 'mu': 8.790774686669131e-07}. Best is trial 9 with value: 0.9584606242012976.[0m
+2020-11-24 14:04:33,510  ROOT INFO STARTING TRIAL : la : 0.04383849258805826 -- mu : 0.0009036682978722492
+2020-11-24 14:04:35,097  root INFO optimization stopped after dual gap reached 0.01, iteration : 101
+2020-11-24 14:04:35,099  ROOT INFO finished optimization with dual gap : tensor([[0.0004]]), loss : tensor([[-0.0285]]), integral : 1.0018706600754679
+2020-11-24 14:04:36,736  root INFO optimization stopped after dual gap reached 0.01, iteration : 103
+2020-11-24 14:04:36,739  ROOT INFO finished optimization with dual gap : tensor([[0.0002]]), loss : tensor([[-0.0273]]), integral : 1.0065494914065334
+2020-11-24 14:04:38,154  root INFO optimization stopped after dual gap reached 0.01, iteration : 91
+2020-11-24 14:04:38,157  ROOT INFO finished optimization with dual gap : tensor([[0.0006]]), loss : tensor([[0.0035]]), integral : 1.0029060295999652
+2020-11-24 14:04:39,552  root INFO optimization stopped after dual gap reached 0.01, iteration : 90
+2020-11-24 14:04:39,556  ROOT INFO finished optimization with dual gap : tensor([[0.0009]]), loss : tensor([[-0.0201]]), integral : 1.0027818579798338
+2020-11-24 14:04:41,097  root INFO optimization stopped after dual gap reached 0.01, iteration : 97
+2020-11-24 14:04:41,099  ROOT INFO finished optimization with dual gap : tensor([[0.0009]]), loss : tensor([[-0.0519]]), integral : 1.0045359325814383
+2020-11-24 14:04:41,104  ROOT INFO ENDING TRIAL : la : 0.04383849258805826 -- mu : 0.0009036682978722492
+[32m[I 2020-11-24 14:04:41,105][0m Trial 12 finished with value: 1.0130644196318876 and parameters: {'la': 0.04383849258805826, 'mu': 0.0009036682978722492}. Best is trial 9 with value: 0.9584606242012976.[0m
+2020-11-24 14:04:41,106  ROOT INFO STARTING TRIAL : la : 0.002220230783940453 -- mu : 0.00011114218251026377
+2020-11-24 14:04:45,505  root INFO optimization stopped after dual gap reached 0.01, iteration : 283
+2020-11-24 14:04:45,509  ROOT INFO finished optimization with dual gap : tensor([[0.0020]]), loss : tensor([[-0.2701]]), integral : 1.0095095648786248
+2020-11-24 14:04:49,704  root INFO optimization stopped after dual gap reached 0.01, iteration : 278
+2020-11-24 14:04:49,707  ROOT INFO finished optimization with dual gap : tensor([[0.0013]]), loss : tensor([[-0.2718]]), integral : 1.0097325318949344
+2020-11-24 14:04:49,939  root INFO optimization stopped after dual gap reached 0.01, iteration : 3902
+2020-11-24 14:04:49,942  ROOT INFO finished optimization with dual gap : tensor([[0.0011]]), loss : tensor([[0.0734]]), integral : 1.0099904467415273
+2020-11-24 14:04:49,969  ROOT INFO ENDING TRIAL : la : 0.07444976070561857 -- mu : 6.195756246374575e-07
+[32m[I 2020-11-24 14:04:49,970][0m Trial 0 finished with value: 1.041247352189718 and parameters: {'la': 0.07444976070561857, 'mu': 6.195756246374575e-07}. Best is trial 9 with value: 0.9584606242012976.[0m
+2020-11-24 14:04:49,983  ROOT INFO STARTING TRIAL : la : 0.0001462308052489671 -- mu : 1.0289935216869588e-05
+2020-11-24 14:04:54,270  root INFO optimization stopped after dual gap reached 0.01, iteration : 300
+2020-11-24 14:04:54,273  ROOT INFO finished optimization with dual gap : tensor([[0.0002]]), loss : tensor([[-0.2388]]), integral : 1.0089868484076772
+2020-11-24 14:04:58,767  root INFO optimization stopped after dual gap reached 0.01, iteration : 294
+2020-11-24 14:04:58,770  ROOT INFO finished optimization with dual gap : tensor([[0.0016]]), loss : tensor([[-0.2634]]), integral : 1.0099949547327516
+2020-11-24 14:05:03,477  root INFO optimization stopped after dual gap reached 0.01, iteration : 296
+2020-11-24 14:05:03,479  ROOT INFO finished optimization with dual gap : tensor([[0.0004]]), loss : tensor([[-0.3081]]), integral : 1.0064401368549338
+2020-11-24 14:05:03,485  ROOT INFO ENDING TRIAL : la : 0.002220230783940453 -- mu : 0.00011114218251026377
+[32m[I 2020-11-24 14:05:03,486][0m Trial 13 finished with value: 0.964796719880194 and parameters: {'la': 0.002220230783940453, 'mu': 0.00011114218251026377}. Best is trial 9 with value: 0.9584606242012976.[0m
+2020-11-24 14:05:03,497  ROOT INFO STARTING TRIAL : la : 2.760801915323409e-05 -- mu : 9.620369459631272e-06
+2020-11-24 14:05:06,218  root INFO optimization stopped after dual gap reached 0.01, iteration : 4033
+2020-11-24 14:05:06,221  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3569]]), integral : 0.9933480385918221
+2020-11-24 14:05:06,247  ROOT INFO ENDING TRIAL : la : 0.00032798941676156584 -- mu : 1.9115549381441843e-06
+[32m[I 2020-11-24 14:05:06,247][0m Trial 11 finished with value: 0.9629828102703264 and parameters: {'la': 0.00032798941676156584, 'mu': 1.9115549381441843e-06}. Best is trial 9 with value: 0.9584606242012976.[0m
+2020-11-24 14:05:06,259  ROOT INFO STARTING TRIAL : la : 1.1695056812805711e-06 -- mu : 1.4069999053290702e-05
+2020-11-24 14:05:15,638  root INFO optimization stopped after dual gap reached 0.01, iteration : 1680
+2020-11-24 14:05:15,642  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3023]]), integral : 0.9926552443612312
+2020-11-24 14:05:26,928  root INFO optimization stopped after dual gap reached 0.01, iteration : 1373
+2020-11-24 14:05:26,931  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3065]]), integral : 0.9928602546224964
+2020-11-24 14:05:28,492  root INFO optimization stopped after dual gap reached 0.01, iteration : 1653
+2020-11-24 14:05:28,496  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3082]]), integral : 0.9930849951439779
+2020-11-24 14:05:39,012  root INFO optimization stopped after dual gap reached 0.01, iteration : 1567
+2020-11-24 14:05:39,015  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3128]]), integral : 0.9923903431335032
+2020-11-24 14:05:46,325  root INFO optimization stopped after dual gap reached 0.01, iteration : 1282
+2020-11-24 14:05:46,328  ROOT INFO finished optimization with dual gap : tensor([[0.0099]]), loss : tensor([[-0.3171]]), integral : 0.9925092755257099
+2020-11-24 14:05:51,653  root INFO optimization stopped after dual gap reached 0.01, iteration : 1533
+2020-11-24 14:05:51,655  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3196]]), integral : 0.9928279679443904
+2020-11-24 14:05:52,918  root INFO optimization stopped after dual gap reached 0.01, iteration : 919
+2020-11-24 14:05:52,921  ROOT INFO finished optimization with dual gap : tensor([[0.0075]]), loss : tensor([[-0.2760]]), integral : 1.009977233519964
+2020-11-24 14:05:58,127  root INFO optimization stopped after dual gap reached 0.01, iteration : 785
+2020-11-24 14:05:58,130  ROOT INFO finished optimization with dual gap : tensor([[0.0081]]), loss : tensor([[-0.2804]]), integral : 1.0099311995665743
+2020-11-24 14:06:04,968  root INFO optimization stopped after dual gap reached 0.01, iteration : 907
+2020-11-24 14:06:04,971  ROOT INFO finished optimization with dual gap : tensor([[0.0091]]), loss : tensor([[-0.2817]]), integral : 1.0099125090072782
+2020-11-24 14:06:15,767  root INFO optimization stopped after dual gap reached 0.01, iteration : 1532
+2020-11-24 14:06:15,770  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.2954]]), integral : 0.9925198320452459
+2020-11-24 14:06:18,084  root INFO optimization stopped after dual gap reached 0.01, iteration : 1316
+2020-11-24 14:06:18,088  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.2997]]), integral : 0.9926998362335123
+2020-11-24 14:06:28,797  root INFO optimization stopped after dual gap reached 0.01, iteration : 842
+2020-11-24 14:06:28,799  ROOT INFO finished optimization with dual gap : tensor([[0.0057]]), loss : tensor([[-0.3672]]), integral : 1.0098656777025785
+2020-11-24 14:06:28,807  ROOT INFO ENDING TRIAL : la : 0.0001462308052489671 -- mu : 1.0289935216869588e-05
+[32m[I 2020-11-24 14:06:28,808][0m Trial 14 finished with value: 0.963518827498957 and parameters: {'la': 0.0001462308052489671, 'mu': 1.0289935216869588e-05}. Best is trial 9 with value: 0.9584606242012976.[0m
+2020-11-24 14:06:28,818  ROOT INFO STARTING TRIAL : la : 1.7363563277420818e-06 -- mu : 0.0012276023805217555
+2020-11-24 14:06:29,034  root INFO optimization stopped after dual gap reached 0.01, iteration : 720
+2020-11-24 14:06:29,037  ROOT INFO finished optimization with dual gap : tensor([[0.0056]]), loss : tensor([[-0.3717]]), integral : 1.0097244818354105
+2020-11-24 14:06:29,045  ROOT INFO ENDING TRIAL : la : 1.1695056812805711e-06 -- mu : 1.4069999053290702e-05
+[32m[I 2020-11-24 14:06:29,045][0m Trial 16 finished with value: 0.9625192391008601 and parameters: {'la': 1.1695056812805711e-06, 'mu': 1.4069999053290702e-05}. Best is trial 9 with value: 0.9584606242012976.[0m
+2020-11-24 14:06:29,055  ROOT INFO STARTING TRIAL : la : 1.606213238322939e-05 -- mu : 0.0013905078254133952
+2020-11-24 14:06:29,253  root INFO optimization stopped after dual gap reached 0.01, iteration : 1582
+2020-11-24 14:06:29,255  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3015]]), integral : 0.9930268123916554
+2020-11-24 14:06:29,690  root INFO optimization stopped after dual gap reached 0.01, iteration : 12959
+2020-11-24 14:06:29,693  ROOT INFO finished optimization with dual gap : tensor([[0.0084]]), loss : tensor([[-0.3507]]), integral : 1.0052372162597973
+2020-11-24 14:06:30,184  root INFO optimization stopped after dual gap reached 0.01, iteration : 82
+2020-11-24 14:06:30,187  ROOT INFO finished optimization with dual gap : tensor([[0.0002]]), loss : tensor([[-0.2609]]), integral : 1.008310138022638
+2020-11-24 14:06:30,346  root INFO optimization stopped after dual gap reached 0.01, iteration : 78
+2020-11-24 14:06:30,349  ROOT INFO finished optimization with dual gap : tensor([[0.0015]]), loss : tensor([[-0.2570]]), integral : 1.0061646091780228
+2020-11-24 14:06:31,459  root INFO optimization stopped after dual gap reached 0.01, iteration : 81
+2020-11-24 14:06:31,462  ROOT INFO finished optimization with dual gap : tensor([[0.0002]]), loss : tensor([[-0.2617]]), integral : 1.0087423330782144
+2020-11-24 14:06:31,571  root INFO optimization stopped after dual gap reached 0.01, iteration : 77
+2020-11-24 14:06:31,575  ROOT INFO finished optimization with dual gap : tensor([[0.0015]]), loss : tensor([[-0.2576]]), integral : 1.0067164684774346
+2020-11-24 14:06:32,907  root INFO optimization stopped after dual gap reached 0.01, iteration : 84
+2020-11-24 14:06:32,911  ROOT INFO finished optimization with dual gap : tensor([[0.0012]]), loss : tensor([[-0.2289]]), integral : 1.0053961231799922
+2020-11-24 14:06:32,931  root INFO optimization stopped after dual gap reached 0.01, iteration : 79
+2020-11-24 14:06:32,934  ROOT INFO finished optimization with dual gap : tensor([[0.0009]]), loss : tensor([[-0.2254]]), integral : 1.0054112412666465
+2020-11-24 14:06:34,286  root INFO optimization stopped after dual gap reached 0.01, iteration : 77
+2020-11-24 14:06:34,290  ROOT INFO finished optimization with dual gap : tensor([[0.0007]]), loss : tensor([[-0.2501]]), integral : 1.0073991334597592
+2020-11-24 14:06:34,329  root INFO optimization stopped after dual gap reached 0.01, iteration : 82
+2020-11-24 14:06:34,332  ROOT INFO finished optimization with dual gap : tensor([[0.0013]]), loss : tensor([[-0.2536]]), integral : 1.0070447937905114
+2020-11-24 14:06:35,604  root INFO optimization stopped after dual gap reached 0.01, iteration : 77
+2020-11-24 14:06:35,608  ROOT INFO finished optimization with dual gap : tensor([[0.0006]]), loss : tensor([[-0.2915]]), integral : 1.0048842493104035
+2020-11-24 14:06:35,612  ROOT INFO ENDING TRIAL : la : 1.606213238322939e-05 -- mu : 0.0013905078254133952
+[32m[I 2020-11-24 14:06:35,613][0m Trial 18 finished with value: 0.9679474796269986 and parameters: {'la': 1.606213238322939e-05, 'mu': 0.0013905078254133952}. Best is trial 9 with value: 0.9584606242012976.[0m
+2020-11-24 14:06:35,623  ROOT INFO STARTING TRIAL : la : 8.253645286035814e-06 -- mu : 0.00017039927702381142
+2020-11-24 14:06:35,736  root INFO optimization stopped after dual gap reached 0.01, iteration : 82
+2020-11-24 14:06:35,739  ROOT INFO finished optimization with dual gap : tensor([[0.0010]]), loss : tensor([[-0.2955]]), integral : 1.0045379555491485
+2020-11-24 14:06:35,744  ROOT INFO ENDING TRIAL : la : 1.7363563277420818e-06 -- mu : 0.0012276023805217555
+[32m[I 2020-11-24 14:06:35,745][0m Trial 17 finished with value: 0.9665316757798804 and parameters: {'la': 1.7363563277420818e-06, 'mu': 0.0012276023805217555}. Best is trial 9 with value: 0.9584606242012976.[0m
+2020-11-24 14:06:38,250  root INFO optimization stopped after dual gap reached 0.01, iteration : 215
+2020-11-24 14:06:38,253  ROOT INFO finished optimization with dual gap : tensor([[0.0042]]), loss : tensor([[-0.2931]]), integral : 1.0091382545450884
+2020-11-24 14:06:40,761  root INFO optimization stopped after dual gap reached 0.01, iteration : 212
+2020-11-24 14:06:40,764  ROOT INFO finished optimization with dual gap : tensor([[0.0035]]), loss : tensor([[-0.2979]]), integral : 1.009214386522289
+2020-11-24 14:06:41,032  root INFO optimization stopped after dual gap reached 0.01, iteration : 870
+2020-11-24 14:06:41,035  ROOT INFO finished optimization with dual gap : tensor([[0.0073]]), loss : tensor([[-0.3758]]), integral : 1.0099858110214621
+2020-11-24 14:06:41,042  ROOT INFO ENDING TRIAL : la : 2.760801915323409e-05 -- mu : 9.620369459631272e-06
+[32m[I 2020-11-24 14:06:41,042][0m Trial 15 finished with value: 0.962295393655068 and parameters: {'la': 2.760801915323409e-05, 'mu': 9.620369459631272e-06}. Best is trial 9 with value: 0.9584606242012976.[0m
+2020-11-24 14:06:42,849  root INFO optimization stopped after dual gap reached 0.01, iteration : 217
+2020-11-24 14:06:42,851  ROOT INFO finished optimization with dual gap : tensor([[0.0018]]), loss : tensor([[-0.2604]]), integral : 1.0093711985680596
+2020-11-24 14:06:44,808  root INFO optimization stopped after dual gap reached 0.01, iteration : 213
+2020-11-24 14:06:44,809  ROOT INFO finished optimization with dual gap : tensor([[0.0046]]), loss : tensor([[-0.2872]]), integral : 1.0091424506275208
+2020-11-24 14:06:46,698  root INFO optimization stopped after dual gap reached 0.01, iteration : 212
+2020-11-24 14:06:46,701  ROOT INFO finished optimization with dual gap : tensor([[0.0001]]), loss : tensor([[-0.3354]]), integral : 1.0080171496762178
+2020-11-24 14:06:46,704  ROOT INFO ENDING TRIAL : la : 8.253645286035814e-06 -- mu : 0.00017039927702381142
+[32m[I 2020-11-24 14:06:46,704][0m Trial 19 finished with value: 0.9587709153509547 and parameters: {'la': 8.253645286035814e-06, 'mu': 0.00017039927702381142}. Best is trial 9 with value: 0.9584606242012976.[0m
+2020-11-24 14:07:16,615  root INFO optimization stopped after dual gap reached 0.01, iteration : 16773
+2020-11-24 14:07:16,617  ROOT INFO finished optimization with dual gap : tensor([[0.0021]]), loss : tensor([[-0.3417]]), integral : 1.008557375997622
+2020-11-24 14:07:35,917  root INFO optimization stopped after dual gap reached 0.01, iteration : 10546
+2020-11-24 14:07:35,918  ROOT INFO finished optimization with dual gap : tensor([[0.0072]]), loss : tensor([[-0.2929]]), integral : 1.0091772644206247
+2020-11-24 14:08:25,441  root INFO optimization stopped after dual gap reached 0.01, iteration : 13296
+2020-11-24 14:08:25,443  ROOT INFO finished optimization with dual gap : tensor([[0.0089]]), loss : tensor([[-0.2834]]), integral : 1.0039751887426533
+2020-11-24 14:08:43,566  root INFO optimization stopped after dual gap reached 0.01, iteration : 12573
+2020-11-24 14:08:43,567  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3319]]), integral : 1.0047338459625201
+2020-11-24 14:09:51,454  root INFO optimization stopped after dual gap reached 0.01, iteration : 15264
+2020-11-24 14:09:51,456  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3228]]), integral : 1.0010906875088799
+2020-11-24 14:10:42,043  root INFO optimization stopped after dual gap reached 0.01, iteration : 22260
+2020-11-24 14:10:42,045  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.4049]]), integral : 1.0021436615125752
+2020-11-24 14:10:42,152  ROOT INFO ENDING TRIAL : la : 2.857805107478368e-06 -- mu : 1.795631014105701e-07
+[32m[I 2020-11-24 14:10:42,152][0m Trial 5 finished with value: 0.9503609355728759 and parameters: {'la': 2.857805107478368e-06, 'mu': 1.795631014105701e-07}. Best is trial 5 with value: 0.9503609355728759.[0m
+2020-11-24 14:11:35,009  root INFO optimization stopped after dual gap reached 0.01, iteration : 28185
+2020-11-24 14:11:35,010  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3940]]), integral : 0.9978854547896558
+2020-11-24 14:11:35,121  ROOT INFO ENDING TRIAL : la : 3.1361229475666456e-05 -- mu : 1.1457614406752692e-07
+[32m[I 2020-11-24 14:11:35,121][0m Trial 4 finished with value: 0.9636343914342362 and parameters: {'la': 3.1361229475666456e-05, 'mu': 1.1457614406752692e-07}. Best is trial 5 with value: 0.9503609355728759.[0m
+2020-11-24 14:12:18,624  root INFO optimization stopped after dual gap reached 0.01, iteration : 12977
+2020-11-24 14:12:18,624  ROOT INFO finished optimization with dual gap : tensor([[0.0100]]), loss : tensor([[-0.3398]]), integral : 1.0051640768082275

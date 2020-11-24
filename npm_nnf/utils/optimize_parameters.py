@@ -47,24 +47,30 @@ torch.set_default_dtype(torch.float64)
 def main(argv):
    n_jobs = None
    ds = None
+   root_directory = ""
    try:
-      opts, args = getopt.getopt(argv,"hc:nd",["config=","njobs=","dataset="])
+      opts, args = getopt.getopt(argv,"hc:r:nd",["config=","njobs=","dataset=","root-directory="])
    except getopt.GetoptError:
       print('optimize_parameters.py -c <config path>')
       sys.exit(2)
+
    for opt, arg in opts:
       if opt == '-h':
          print('optimize_parameters.py -c <config path>')
          sys.exit()
-      elif opt in ("-c", "--config"):
+      if opt in ("-r","--root-directory"):
+         root_directory=arg
+      if opt in ("-c", "--config"):
          with open(arg) as config_file:
             data = json.load(config_file)
-      elif opt in ("-n","--njobs"):
+
+      if opt in ("-n","--njobs"):
          n_jobs = arg
-      elif opt in ("-d","--dataset"):
+      if opt in ("-d","--dataset"):
          ds = pickle.load(open(arg,'rb'))
    if isinstance(ds,type(None)):
-      ds = pickle.load(open(os.path.join(data['data_set_path'],data['data_set_file']),'rb'))
+      ds_path = os.path.join(root_directory,data['data_set_path'])
+      ds = pickle.load(open(os.path.join(ds_path,data['data_set_file']),'rb'))
 
    d = ds.X.size(1)
    n = ds.X.size(0)
@@ -73,7 +79,7 @@ def main(argv):
    version = data["version"]
    eta = data["eta"]
    cv = data["cv"]
-   file_path = data['save_path']
+   file_path = os.path.join(root_directory,data['save_path'])
    file_name = data['save_name']
    model_name = data['model'][1]
    file_name = f'{file_name}_{model_name}_dimension{d}_datasetsize{n}'

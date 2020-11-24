@@ -1,0 +1,42 @@
+[32m[I 2020-11-24 14:14:33,453][0m A new study created in memory with name: no-name-5badda83-176e-4c3c-98bd-d40c8b58bbdd[0m
+2020-11-24 14:14:33,455  ROOT INFO STARTING TRIAL : la : 0.025831601002738583
+2020-11-24 14:14:33,456  ROOT INFO STARTING TRIAL : la : 0.00010534340760860258
+2020-11-24 14:14:33,739  ROOT INFO finished optimization after 105 iterations with loss : tensor([[-65.9103]]), integral : tensor([[1.0000]])
+2020-11-24 14:14:34,012  ROOT INFO finished optimization after 105 iterations with loss : tensor([[-65.8510]]), integral : tensor([[1.0000]])
+2020-11-24 14:14:38,148  ROOT INFO finished optimization after 2360 iterations with loss : tensor([[-99.4049]]), integral : tensor([[1.]])
+2020-11-24 14:14:38,182  ROOT INFO finished optimization after 1625 iterations with loss : tensor([[-65.8415]]), integral : tensor([[1.0000]])
+2020-11-24 14:14:42,369  ROOT INFO finished optimization after 1600 iterations with loss : tensor([[-65.8196]]), integral : tensor([[1.0000]])
+2020-11-24 14:14:42,623  ROOT INFO finished optimization after 102 iterations with loss : tensor([[-66.5458]]), integral : tensor([[1.0000]])
+2020-11-24 14:14:42,624  ROOT INFO ENDING TRIAL : la : 0.025831601002738583
+[32m[I 2020-11-24 14:14:42,625][0m Trial 0 finished with value: 1.4926619752043073 and parameters: {'la': 0.025831601002738583}. Best is trial 0 with value: 1.4926619752043073.[0m
+2020-11-24 14:14:42,625  ROOT INFO STARTING TRIAL : la : 1.9187174532947916e-06
+2020-11-24 14:14:43,627  ROOT INFO finished optimization after 2795 iterations with loss : tensor([[-99.1398]]), integral : tensor([[1.]])
+2020-11-24 14:14:47,225  ROOT INFO finished optimization after 2380 iterations with loss : tensor([[-99.5772]]), integral : tensor([[1.0000]])
+2020-11-24 14:14:47,911  ROOT INFO finished optimization after 2175 iterations with loss : tensor([[-99.3392]]), integral : tensor([[1.]])
+2020-11-24 14:14:52,277  ROOT INFO finished optimization after 2185 iterations with loss : tensor([[-99.0886]]), integral : tensor([[1.0000]])
+2020-11-24 14:14:52,833  ROOT INFO finished optimization after 2810 iterations with loss : tensor([[-99.3111]]), integral : tensor([[1.]])
+2020-11-24 14:14:57,188  ROOT INFO finished optimization after 2160 iterations with loss : tensor([[-99.5113]]), integral : tensor([[1.0000]])
+2020-11-24 14:14:58,193  ROOT INFO finished optimization after 3075 iterations with loss : tensor([[-100.8123]]), integral : tensor([[1.0000]])
+2020-11-24 14:14:58,196  ROOT INFO ENDING TRIAL : la : 0.00010534340760860258
+[32m[I 2020-11-24 14:14:58,196][0m Trial 1 finished with value: 1.4393572478726284 and parameters: {'la': 0.00010534340760860258}. Best is trial 1 with value: 1.4393572478726284.[0m
+2020-11-24 14:14:58,197  ROOT INFO STARTING TRIAL : la : 2.3015425856531184e-06
+2020-11-24 14:15:01,845  ROOT INFO finished optimization after 2200 iterations with loss : tensor([[-99.2597]]), integral : tensor([[1.0000]])
+2020-11-24 14:15:03,335  ROOT INFO finished optimization after 2380 iterations with loss : tensor([[-99.5765]]), integral : tensor([[1.0000]])
+2020-11-24 14:15:07,971  ROOT INFO finished optimization after 3050 iterations with loss : tensor([[-100.9911]]), integral : tensor([[1.0000]])
+2020-11-24 14:15:07,974  ROOT INFO ENDING TRIAL : la : 1.9187174532947916e-06
+[32m[I 2020-11-24 14:15:07,975][0m Trial 2 finished with value: 1.4391979686905922 and parameters: {'la': 1.9187174532947916e-06}. Best is trial 2 with value: 1.4391979686905922.[0m
+2020-11-24 14:15:07,976  ROOT INFO STARTING TRIAL : la : 1.2664942671483085e-05
+2020-11-24 14:15:08,982  ROOT INFO finished optimization after 2810 iterations with loss : tensor([[-99.3105]]), integral : tensor([[1.]])
+2020-11-24 14:15:12,822  ROOT INFO finished optimization after 2380 iterations with loss : tensor([[-99.5594]]), integral : tensor([[1.]])
+2020-11-24 14:15:13,440  ROOT INFO finished optimization after 2160 iterations with loss : tensor([[-99.5106]]), integral : tensor([[1.0000]])
+2020-11-24 14:15:18,174  ROOT INFO finished optimization after 2200 iterations with loss : tensor([[-99.2591]]), integral : tensor([[1.0000]])
+2020-11-24 14:15:18,713  ROOT INFO finished optimization after 2810 iterations with loss : tensor([[-99.2934]]), integral : tensor([[1.]])
+2020-11-24 14:15:23,044  ROOT INFO finished optimization after 2160 iterations with loss : tensor([[-99.4933]]), integral : tensor([[1.]])
+2020-11-24 14:15:23,985  ROOT INFO finished optimization after 3050 iterations with loss : tensor([[-100.9904]]), integral : tensor([[1.0000]])
+2020-11-24 14:15:23,989  ROOT INFO ENDING TRIAL : la : 2.3015425856531184e-06
+[32m[I 2020-11-24 14:15:23,989][0m Trial 3 finished with value: 1.4391986160821377 and parameters: {'la': 2.3015425856531184e-06}. Best is trial 2 with value: 1.4391979686905922.[0m
+2020-11-24 14:15:25,563  ROOT INFO finished optimization after 2195 iterations with loss : tensor([[-99.2417]]), integral : tensor([[1.0000]])
+2020-11-24 14:15:28,114  ROOT INFO finished optimization after 3050 iterations with loss : tensor([[-100.9724]]), integral : tensor([[1.0000]])
+2020-11-24 14:15:28,117  ROOT INFO ENDING TRIAL : la : 1.2664942671483085e-05
+[32m[I 2020-11-24 14:15:28,117][0m Trial 4 finished with value: 1.4392402278384968 and parameters: {'la': 1.2664942671483085e-05}. Best is trial 2 with value: 1.4391979686905922.[0m
+2020-11-24 14:15:31,127  ROOT INFO finished optimization after 3080 iterations with loss : tensor([[-133.4687]]), integral : tensor([[1.]])

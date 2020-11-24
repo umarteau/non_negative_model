@@ -1,12 +1,8 @@
 
 import torch
-
 import os
 import pickle
-
-
 import importlib
-
 import optuna
 optuna.logging.set_verbosity(0)
 
@@ -14,24 +10,22 @@ optuna.logging.set_verbosity(0)
 import warnings
 warnings.filterwarnings('ignore')
 
-
-
-
 import json
 
 torch.set_default_dtype(torch.float64)
 
-def load(config_file_path):
+def load(config_file_path,root_path = ""):
     with open(config_file_path) as config_file:
         data = json.load(config_file)
-    return load_data(data)
+    return load_data(data,root_path = root_path)
 
-def load_data(data):
+def load_data(data,root_path = ""):
     version = data["version"]
-    file_path = data['save_path']
+    file_path = os.path.join(root_path,data['save_path'])
     file_name = data['save_name']
     model_name = data['model'][1]
-    ds = pickle.load(open(os.path.join(data['data_set_path'], data['data_set_file']),'rb'))
+    dataset_path = os.path.join(root_path,data['data_set_path'])
+    ds = pickle.load(open(os.path.join(dataset_path, data['data_set_file']),'rb'))
     n = ds.X.size(0)
     d = ds.X.size(1)
     file_name = f'{file_name}_{model_name}_dimension{d}_datasetsize{n}'

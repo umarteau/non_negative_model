@@ -1,0 +1,364 @@
+[32m[I 2020-11-24 14:15:34,759][0m A new study created in memory with name: no-name-10b1380c-4b2f-4c41-82a7-f47fa3d2d9c2[0m
+2020-11-24 14:15:34,763  ROOT INFO STARTING TRIAL : la : 9.091028753441656e-06
+2020-11-24 14:15:34,764  ROOT INFO STARTING TRIAL : la : 0.8377545116627164
+2020-11-24 14:15:34,887  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 124.9693800718536
+2020-11-24 14:15:34,956  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 59.00330827354607
+2020-11-24 14:15:34,980  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 124.96938007176038
+2020-11-24 14:15:35,074  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 124.96938007174579
+2020-11-24 14:15:35,120  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 59.03231464476692
+2020-11-24 14:15:35,180  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 125.11397678641553
+2020-11-24 14:15:35,274  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 125.11397678653378
+2020-11-24 14:15:35,287  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 59.02171438664257
+2020-11-24 14:15:35,366  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 125.1139767864293
+2020-11-24 14:15:35,471  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 125.21788269952087
+2020-11-24 14:15:35,478  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 58.01599226015019
+2020-11-24 14:15:35,562  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 125.21788269952145
+2020-11-24 14:15:35,651  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 125.21788269952165
+2020-11-24 14:15:35,657  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 58.00897813605418
+2020-11-24 14:15:35,754  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 125.28078961896117
+2020-11-24 14:15:35,836  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 58.018504957690524
+2020-11-24 14:15:35,843  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 125.28078961894654
+2020-11-24 14:15:35,946  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 125.28078961894626
+2020-11-24 14:15:36,026  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 61.81139654056641
+2020-11-24 14:15:36,053  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 124.84403665958831
+2020-11-24 14:15:36,149  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 124.84403665960463
+2020-11-24 14:15:36,196  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 61.81995460250834
+2020-11-24 14:15:36,246  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 124.84403665960794
+2020-11-24 14:15:36,248  ROOT INFO ENDING TRIAL : la : 0.8377545116627164
+[32m[I 2020-11-24 14:15:36,248][0m Trial 1 finished with value: 1.9048491828291625 and parameters: {'la': 0.8377545116627164}. Best is trial 1 with value: 1.9048491828291625.[0m
+2020-11-24 14:15:36,249  ROOT INFO STARTING TRIAL : la : 0.0019766973481160845
+2020-11-24 14:15:36,358  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 61.8204653694907
+2020-11-24 14:15:36,378  ROOT INFO restart number 0 -- finished optimization after 20 iterations with loss : 68.01669645045662
+2020-11-24 14:15:36,496  ROOT INFO restart number 1 -- finished optimization after 15 iterations with loss : 68.12923756402155
+2020-11-24 14:15:36,569  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 59.15815708028321
+2020-11-24 14:15:36,619  ROOT INFO restart number 2 -- finished optimization after 20 iterations with loss : 68.03781612533191
+2020-11-24 14:15:36,750  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 59.14375540911894
+2020-11-24 14:15:36,756  ROOT INFO restart number 0 -- finished optimization after 20 iterations with loss : 67.25121559968379
+2020-11-24 14:15:36,885  ROOT INFO restart number 1 -- finished optimization after 20 iterations with loss : 67.23003835375765
+2020-11-24 14:15:36,946  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 59.12754539655992
+2020-11-24 14:15:37,023  ROOT INFO restart number 2 -- finished optimization after 20 iterations with loss : 67.23219208975537
+2020-11-24 14:15:37,168  ROOT INFO restart number 0 -- finished optimization after 15 iterations with loss : 68.716835989925
+2020-11-24 14:15:37,184  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 51.32496447591041
+2020-11-24 14:15:37,307  ROOT INFO restart number 1 -- finished optimization after 15 iterations with loss : 68.69849355757235
+2020-11-24 14:15:37,436  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 51.32347880153504
+2020-11-24 14:15:37,540  ROOT INFO restart number 2 -- finished optimization after 20 iterations with loss : 68.56035417939103
+2020-11-24 14:15:37,734  ROOT INFO restart number 0 -- finished optimization after 20 iterations with loss : 67.5312352926606
+2020-11-24 14:15:37,752  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 51.30885443273954
+2020-11-24 14:15:37,753  ROOT INFO ENDING TRIAL : la : 9.091028753441656e-06
+[32m[I 2020-11-24 14:15:37,754][0m Trial 0 finished with value: 1.0256458226415996 and parameters: {'la': 9.091028753441656e-06}. Best is trial 0 with value: 1.0256458226415996.[0m
+2020-11-24 14:15:37,755  ROOT INFO STARTING TRIAL : la : 4.7449595588940226e-05
+2020-11-24 14:15:37,868  ROOT INFO restart number 1 -- finished optimization after 20 iterations with loss : 67.54234229487886
+2020-11-24 14:15:37,939  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 59.97608862086111
+2020-11-24 14:15:37,991  ROOT INFO restart number 2 -- finished optimization after 20 iterations with loss : 67.53590242782633
+2020-11-24 14:15:38,098  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 59.990153223543466
+2020-11-24 14:15:38,124  ROOT INFO restart number 0 -- finished optimization after 20 iterations with loss : 64.32538260163516
+2020-11-24 14:15:38,252  ROOT INFO restart number 1 -- finished optimization after 20 iterations with loss : 64.3320577695944
+2020-11-24 14:15:38,265  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 59.962246334533106
+2020-11-24 14:15:38,381  ROOT INFO restart number 2 -- finished optimization after 20 iterations with loss : 64.32989693992289
+2020-11-24 14:15:38,383  ROOT INFO ENDING TRIAL : la : 0.0019766973481160845
+[32m[I 2020-11-24 14:15:38,384][0m Trial 2 finished with value: 1.031261969824317 and parameters: {'la': 0.0019766973481160845}. Best is trial 0 with value: 1.0256458226415996.[0m
+2020-11-24 14:15:38,385  ROOT INFO STARTING TRIAL : la : 0.00038286572792768853
+2020-11-24 14:15:38,506  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 58.20565784131199
+2020-11-24 14:15:38,623  ROOT INFO restart number 0 -- finished optimization after 25 iterations with loss : 62.19572232313976
+2020-11-24 14:15:38,723  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 58.344144707400055
+2020-11-24 14:15:38,779  ROOT INFO restart number 1 -- finished optimization after 25 iterations with loss : 62.253280876890976
+2020-11-24 14:15:38,922  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 58.21043291687927
+2020-11-24 14:15:38,934  ROOT INFO restart number 2 -- finished optimization after 25 iterations with loss : 62.20739971956559
+2020-11-24 14:15:39,081  ROOT INFO restart number 0 -- finished optimization after 25 iterations with loss : 62.027272693992444
+2020-11-24 14:15:39,111  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 60.016085778990416
+2020-11-24 14:15:39,235  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 61.93926881529815
+2020-11-24 14:15:39,247  ROOT INFO restart number 1 -- finished optimization after 25 iterations with loss : 60.14260881765678
+2020-11-24 14:15:39,405  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 61.95772051095547
+2020-11-24 14:15:39,414  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 60.0311809978694
+2020-11-24 14:15:39,579  ROOT INFO restart number 0 -- finished optimization after 25 iterations with loss : 64.24389909201979
+2020-11-24 14:15:39,608  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 58.355579490908994
+2020-11-24 14:15:39,730  ROOT INFO restart number 1 -- finished optimization after 25 iterations with loss : 64.24790497913628
+2020-11-24 14:15:39,805  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 58.33663719157446
+2020-11-24 14:15:39,884  ROOT INFO restart number 2 -- finished optimization after 25 iterations with loss : 64.2479107143644
+2020-11-24 14:15:39,995  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 58.34873313997384
+2020-11-24 14:15:40,064  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 62.1377263757668
+2020-11-24 14:15:40,216  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 53.80051214610091
+2020-11-24 14:15:40,264  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 62.11254422955117
+2020-11-24 14:15:40,467  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 53.777668086171374
+2020-11-24 14:15:40,487  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 62.12745039456238
+2020-11-24 14:15:40,662  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 53.76177012966755
+2020-11-24 14:15:40,664  ROOT INFO ENDING TRIAL : la : 4.7449595588940226e-05
+[32m[I 2020-11-24 14:15:40,664][0m Trial 3 finished with value: 1.0214592562824532 and parameters: {'la': 4.7449595588940226e-05}. Best is trial 3 with value: 1.0214592562824532.[0m
+2020-11-24 14:15:40,665  ROOT INFO STARTING TRIAL : la : 8.159655009595695e-05
+2020-11-24 14:15:40,669  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 56.12848560937067
+2020-11-24 14:15:40,829  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 56.14208034368903
+2020-11-24 14:15:40,837  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 59.2255129361299
+2020-11-24 14:15:41,005  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 56.142479204689586
+2020-11-24 14:15:41,007  ROOT INFO ENDING TRIAL : la : 0.00038286572792768853
+[32m[I 2020-11-24 14:15:41,008][0m Trial 4 finished with value: 1.0193611634124689 and parameters: {'la': 0.00038286572792768853}. Best is trial 4 with value: 1.0193611634124689.[0m
+2020-11-24 14:15:41,009  ROOT INFO STARTING TRIAL : la : 0.03998287019098225
+2020-11-24 14:15:41,016  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 59.17627803457128
+2020-11-24 14:15:41,116  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 96.34328350828336
+2020-11-24 14:15:41,208  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 59.20320230755891
+2020-11-24 14:15:41,213  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 96.34256017844689
+2020-11-24 14:15:41,311  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 96.34205036503319
+2020-11-24 14:15:41,419  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 59.42320793050737
+2020-11-24 14:15:41,423  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 96.44682443775814
+2020-11-24 14:15:41,524  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 96.44757935823694
+2020-11-24 14:15:41,611  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 59.40832118913554
+2020-11-24 14:15:41,613  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 96.4464767238577
+2020-11-24 14:15:41,707  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 97.2347750160948
+2020-11-24 14:15:41,794  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 97.23582344558528
+2020-11-24 14:15:41,805  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 59.33894416540486
+2020-11-24 14:15:41,893  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 97.23522464309698
+2020-11-24 14:15:41,995  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 97.11743726157012
+2020-11-24 14:15:42,003  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 61.633517322628975
+2020-11-24 14:15:42,096  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 97.11927078710983
+2020-11-24 14:15:42,186  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 97.1171558544118
+2020-11-24 14:15:42,193  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 61.611736531061894
+2020-11-24 14:15:42,292  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 93.71650925190909
+2020-11-24 14:15:42,378  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 61.62707807716727
+2020-11-24 14:15:42,384  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 93.71567599603223
+2020-11-24 14:15:42,481  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 93.71694645156514
+2020-11-24 14:15:42,483  ROOT INFO ENDING TRIAL : la : 0.03998287019098225
+[32m[I 2020-11-24 14:15:42,484][0m Trial 6 finished with value: 1.3608892806878423 and parameters: {'la': 0.03998287019098225}. Best is trial 4 with value: 1.0193611634124689.[0m
+2020-11-24 14:15:42,486  ROOT INFO STARTING TRIAL : la : 0.0015754999559695949
+2020-11-24 14:15:42,608  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 60.8638030066534
+2020-11-24 14:15:42,641  ROOT INFO restart number 0 -- finished optimization after 20 iterations with loss : 67.97170123587166
+2020-11-24 14:15:42,764  ROOT INFO restart number 1 -- finished optimization after 15 iterations with loss : 68.09823051303616
+2020-11-24 14:15:42,793  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 60.98548790358109
+2020-11-24 14:15:42,908  ROOT INFO restart number 2 -- finished optimization after 20 iterations with loss : 67.96465894560163
+2020-11-24 14:15:43,003  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 60.863008069269746
+2020-11-24 14:15:43,058  ROOT INFO restart number 0 -- finished optimization after 20 iterations with loss : 65.11634290153539
+2020-11-24 14:15:43,200  ROOT INFO restart number 1 -- finished optimization after 20 iterations with loss : 65.11461502439558
+2020-11-24 14:15:43,222  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 52.83295956820165
+2020-11-24 14:15:43,333  ROOT INFO restart number 2 -- finished optimization after 20 iterations with loss : 65.11614799534355
+2020-11-24 14:15:43,415  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 52.810902243903335
+2020-11-24 14:15:43,477  ROOT INFO restart number 0 -- finished optimization after 20 iterations with loss : 68.21477672653678
+2020-11-24 14:15:43,616  ROOT INFO restart number 1 -- finished optimization after 20 iterations with loss : 68.22233127442932
+2020-11-24 14:15:43,620  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 52.812406562064794
+2020-11-24 14:15:43,622  ROOT INFO ENDING TRIAL : la : 8.159655009595695e-05
+[32m[I 2020-11-24 14:15:43,623][0m Trial 5 finished with value: 1.0254859392077893 and parameters: {'la': 8.159655009595695e-05}. Best is trial 4 with value: 1.0193611634124689.[0m
+2020-11-24 14:15:43,624  ROOT INFO STARTING TRIAL : la : 0.006340761472787146
+2020-11-24 14:15:43,727  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 75.50179691756273
+2020-11-24 14:15:43,749  ROOT INFO restart number 2 -- finished optimization after 20 iterations with loss : 68.19827875201503
+2020-11-24 14:15:43,842  ROOT INFO restart number 1 -- finished optimization after 15 iterations with loss : 75.32710151920448
+2020-11-24 14:15:43,892  ROOT INFO restart number 0 -- finished optimization after 20 iterations with loss : 66.72880321685362
+2020-11-24 14:15:43,936  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 75.50516678901548
+2020-11-24 14:15:44,028  ROOT INFO restart number 1 -- finished optimization after 20 iterations with loss : 66.75070915186396
+2020-11-24 14:15:44,064  ROOT INFO restart number 0 -- finished optimization after 15 iterations with loss : 75.33539131837311
+2020-11-24 14:15:44,162  ROOT INFO restart number 2 -- finished optimization after 20 iterations with loss : 66.73306905426443
+2020-11-24 14:15:44,177  ROOT INFO restart number 1 -- finished optimization after 15 iterations with loss : 75.32211962253004
+2020-11-24 14:15:44,282  ROOT INFO restart number 2 -- finished optimization after 15 iterations with loss : 75.32950409056753
+2020-11-24 14:15:44,296  ROOT INFO restart number 0 -- finished optimization after 20 iterations with loss : 61.50852117382799
+2020-11-24 14:15:44,379  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 78.89572307618405
+2020-11-24 14:15:44,423  ROOT INFO restart number 1 -- finished optimization after 20 iterations with loss : 61.500041844996424
+2020-11-24 14:15:44,460  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 78.94169624924355
+2020-11-24 14:15:44,538  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 78.87398645289163
+2020-11-24 14:15:44,542  ROOT INFO restart number 2 -- finished optimization after 20 iterations with loss : 61.49583660561055
+2020-11-24 14:15:44,544  ROOT INFO ENDING TRIAL : la : 0.0015754999559695949
+[32m[I 2020-11-24 14:15:44,544][0m Trial 7 finished with value: 1.0230040403941305 and parameters: {'la': 0.0015754999559695949}. Best is trial 4 with value: 1.0193611634124689.[0m
+2020-11-24 14:15:44,545  ROOT INFO STARTING TRIAL : la : 0.0038793970148704305
+2020-11-24 14:15:44,630  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 77.35972739318908
+2020-11-24 14:15:44,658  ROOT INFO restart number 0 -- finished optimization after 15 iterations with loss : 72.80407135801956
+2020-11-24 14:15:44,712  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 77.3065944258636
+2020-11-24 14:15:44,768  ROOT INFO restart number 1 -- finished optimization after 15 iterations with loss : 72.83787224973173
+2020-11-24 14:15:44,830  ROOT INFO restart number 2 -- finished optimization after 15 iterations with loss : 77.13118153466581
+2020-11-24 14:15:44,880  ROOT INFO restart number 2 -- finished optimization after 15 iterations with loss : 72.81141388091683
+2020-11-24 14:15:44,950  ROOT INFO restart number 0 -- finished optimization after 15 iterations with loss : 73.70685557035817
+2020-11-24 14:15:45,001  ROOT INFO restart number 0 -- finished optimization after 15 iterations with loss : 73.39446050469849
+2020-11-24 14:15:45,060  ROOT INFO restart number 1 -- finished optimization after 15 iterations with loss : 73.7061184299799
+2020-11-24 14:15:45,113  ROOT INFO restart number 1 -- finished optimization after 15 iterations with loss : 73.39910677764192
+2020-11-24 14:15:45,152  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 73.898180364344
+2020-11-24 14:15:45,154  ROOT INFO ENDING TRIAL : la : 0.006340761472787146
+[32m[I 2020-11-24 14:15:45,154][0m Trial 8 finished with value: 1.1110057855115907 and parameters: {'la': 0.006340761472787146}. Best is trial 4 with value: 1.0193611634124689.[0m
+2020-11-24 14:15:45,155  ROOT INFO STARTING TRIAL : la : 0.22250692065262004
+2020-11-24 14:15:45,223  ROOT INFO restart number 2 -- finished optimization after 15 iterations with loss : 73.41471085644483
+2020-11-24 14:15:45,252  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 115.11312642953413
+2020-11-24 14:15:45,343  ROOT INFO restart number 0 -- finished optimization after 15 iterations with loss : 74.3812483082773
+2020-11-24 14:15:45,345  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 115.11312650190597
+2020-11-24 14:15:45,438  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 115.11312645106435
+2020-11-24 14:15:45,452  ROOT INFO restart number 1 -- finished optimization after 15 iterations with loss : 74.39139946341149
+2020-11-24 14:15:45,538  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 114.95346751243797
+2020-11-24 14:15:45,559  ROOT INFO restart number 2 -- finished optimization after 15 iterations with loss : 74.39099417478954
+2020-11-24 14:15:45,627  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 114.95346748066598
+2020-11-24 14:15:45,678  ROOT INFO restart number 0 -- finished optimization after 15 iterations with loss : 72.38491331788936
+2020-11-24 14:15:45,711  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 114.95346735430834
+2020-11-24 14:15:45,779  ROOT INFO restart number 1 -- finished optimization after 15 iterations with loss : 72.40036657545375
+2020-11-24 14:15:45,807  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 115.27682902328607
+2020-11-24 14:15:45,885  ROOT INFO restart number 2 -- finished optimization after 15 iterations with loss : 72.3989740458453
+2020-11-24 14:15:45,893  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 115.27682891686914
+2020-11-24 14:15:45,984  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 115.27682914011517
+2020-11-24 14:15:46,003  ROOT INFO restart number 0 -- finished optimization after 15 iterations with loss : 69.46840527377987
+2020-11-24 14:15:46,091  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 115.16096900432828
+2020-11-24 14:15:46,118  ROOT INFO restart number 1 -- finished optimization after 15 iterations with loss : 69.49251471531369
+2020-11-24 14:15:46,185  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 115.16096892565331
+2020-11-24 14:15:46,229  ROOT INFO restart number 2 -- finished optimization after 15 iterations with loss : 69.48961499427594
+2020-11-24 14:15:46,231  ROOT INFO ENDING TRIAL : la : 0.0038793970148704305
+[32m[I 2020-11-24 14:15:46,232][0m Trial 9 finished with value: 1.0752796110645721 and parameters: {'la': 0.0038793970148704305}. Best is trial 4 with value: 1.0193611634124689.[0m
+2020-11-24 14:15:46,237  ROOT INFO STARTING TRIAL : la : 1.8950731347522654e-06
+2020-11-24 14:15:46,281  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 115.16096924203688
+2020-11-24 14:15:46,377  ROOT INFO restart number 0 -- finished optimization after 10 iterations with loss : 114.75375466987758
+2020-11-24 14:15:46,412  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 59.472315125381385
+2020-11-24 14:15:46,470  ROOT INFO restart number 1 -- finished optimization after 10 iterations with loss : 114.75375780601507
+2020-11-24 14:15:46,564  ROOT INFO restart number 2 -- finished optimization after 10 iterations with loss : 114.75375466032744
+2020-11-24 14:15:46,565  ROOT INFO ENDING TRIAL : la : 0.22250692065262004
+[32m[I 2020-11-24 14:15:46,566][0m Trial 10 finished with value: 1.6814225556682842 and parameters: {'la': 0.22250692065262004}. Best is trial 4 with value: 1.0193611634124689.[0m
+2020-11-24 14:15:46,570  ROOT INFO STARTING TRIAL : la : 6.670761654187017e-05
+2020-11-24 14:15:46,612  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 59.36696683123929
+2020-11-24 14:15:46,758  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 59.64006570804295
+2020-11-24 14:15:46,815  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 59.36817256599573
+2020-11-24 14:15:46,934  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 59.66546836217476
+2020-11-24 14:15:47,003  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 56.42210200979899
+2020-11-24 14:15:47,160  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 59.549200586027
+2020-11-24 14:15:47,233  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 56.34125461450741
+2020-11-24 14:15:47,358  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 58.00693392999113
+2020-11-24 14:15:47,434  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 56.31534878265623
+2020-11-24 14:15:47,555  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 57.95065427788475
+2020-11-24 14:15:47,618  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 61.5380336500681
+2020-11-24 14:15:47,741  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 57.94850318875169
+2020-11-24 14:15:47,792  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 61.52800297914094
+2020-11-24 14:15:47,923  ROOT INFO restart number 0 -- finished optimization after 25 iterations with loss : 62.8905175660807
+2020-11-24 14:15:47,985  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 61.51749848161539
+2020-11-24 14:15:48,084  ROOT INFO restart number 1 -- finished optimization after 25 iterations with loss : 62.95133222792311
+2020-11-24 14:15:48,199  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 59.48427634794716
+2020-11-24 14:15:48,269  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 62.85052659831025
+2020-11-24 14:15:48,408  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 59.481070678983016
+2020-11-24 14:15:48,457  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 60.7096010746487
+2020-11-24 14:15:48,592  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 59.478725596904205
+2020-11-24 14:15:48,618  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 60.72893228462292
+2020-11-24 14:15:48,782  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 60.71319304934572
+2020-11-24 14:15:48,794  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 52.38846498424582
+2020-11-24 14:15:48,977  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 52.86058755190793
+2020-11-24 14:15:48,977  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 52.386388674924746
+2020-11-24 14:15:49,190  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 52.849106492263175
+2020-11-24 14:15:49,191  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 52.387140926236654
+2020-11-24 14:15:49,192  ROOT INFO ENDING TRIAL : la : 1.8950731347522654e-06
+[32m[I 2020-11-24 14:15:49,193][0m Trial 11 finished with value: 1.0207745731669058 and parameters: {'la': 1.8950731347522654e-06}. Best is trial 4 with value: 1.0193611634124689.[0m
+2020-11-24 14:15:49,198  ROOT INFO STARTING TRIAL : la : 2.8677796042961304e-06
+2020-11-24 14:15:49,385  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 52.85893450431412
+2020-11-24 14:15:49,386  ROOT INFO ENDING TRIAL : la : 6.670761654187017e-05
+[32m[I 2020-11-24 14:15:49,387][0m Trial 12 finished with value: 1.025708834625227 and parameters: {'la': 6.670761654187017e-05}. Best is trial 4 with value: 1.0193611634124689.[0m
+2020-11-24 14:15:49,392  ROOT INFO STARTING TRIAL : la : 1.800300240851592e-06
+2020-11-24 14:15:49,401  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 58.58327609326976
+2020-11-24 14:15:49,576  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 58.59246095841629
+2020-11-24 14:15:49,576  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 57.728142501773355
+2020-11-24 14:15:49,757  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 58.65063182390728
+2020-11-24 14:15:49,778  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 57.75209744282603
+2020-11-24 14:15:49,943  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 56.3844584558078
+2020-11-24 14:15:49,973  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 57.75078044580116
+2020-11-24 14:15:50,139  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 56.25010924391362
+2020-11-24 14:15:50,186  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 55.87772730522352
+2020-11-24 14:15:50,339  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 56.22942503453788
+2020-11-24 14:15:50,379  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 55.9076561835071
+2020-11-24 14:15:50,513  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 62.397218522759815
+2020-11-24 14:15:50,562  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 55.87801250815864
+2020-11-24 14:15:50,677  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 62.38629352063764
+2020-11-24 14:15:50,717  ROOT INFO restart number 0 -- finished optimization after 25 iterations with loss : 64.48601930117741
+2020-11-24 14:15:50,816  ROOT INFO restart number 2 -- finished optimization after 25 iterations with loss : 62.50201089280369
+2020-11-24 14:15:50,873  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 64.39449705881214
+2020-11-24 14:15:50,998  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 59.81079660178572
+2020-11-24 14:15:51,050  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 64.37188138184167
+2020-11-24 14:15:51,165  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 59.814603808300745
+2020-11-24 14:15:51,246  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 58.1405138383661
+2020-11-24 14:15:51,350  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 59.7114677243178
+2020-11-24 14:15:51,411  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 58.23111831037568
+2020-11-24 14:15:51,538  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 51.60913805667774
+2020-11-24 14:15:51,591  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 58.11484485723346
+2020-11-24 14:15:51,752  ROOT INFO restart number 1 -- finished optimization after 40 iterations with loss : 51.517707832153164
+2020-11-24 14:15:51,799  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 52.11359016984758
+2020-11-24 14:15:51,938  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 51.60041391148161
+2020-11-24 14:15:51,939  ROOT INFO ENDING TRIAL : la : 2.8677796042961304e-06
+[32m[I 2020-11-24 14:15:51,940][0m Trial 13 finished with value: 1.019050057632232 and parameters: {'la': 2.8677796042961304e-06}. Best is trial 13 with value: 1.019050057632232.[0m
+2020-11-24 14:15:51,945  ROOT INFO STARTING TRIAL : la : 1.7629844453088895e-06
+2020-11-24 14:15:52,005  ROOT INFO restart number 1 -- finished optimization after 40 iterations with loss : 52.049930174853436
+2020-11-24 14:15:52,120  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 59.14212816506221
+2020-11-24 14:15:52,193  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 52.13498690521959
+2020-11-24 14:15:52,195  ROOT INFO ENDING TRIAL : la : 1.800300240851592e-06
+[32m[I 2020-11-24 14:15:52,196][0m Trial 14 finished with value: 1.015724793265959 and parameters: {'la': 1.800300240851592e-06}. Best is trial 14 with value: 1.015724793265959.[0m
+2020-11-24 14:15:52,201  ROOT INFO STARTING TRIAL : la : 1.60292567046755e-06
+2020-11-24 14:15:52,293  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 59.1059580682467
+2020-11-24 14:15:52,407  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 59.63424048312083
+2020-11-24 14:15:52,472  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 59.10471185264717
+2020-11-24 14:15:52,583  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 59.72320068456332
+2020-11-24 14:15:52,681  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 56.72561721562119
+2020-11-24 14:15:52,755  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 59.70591375557074
+2020-11-24 14:15:52,865  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 56.748137656157525
+2020-11-24 14:15:52,953  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 57.43739831691106
+2020-11-24 14:15:53,060  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 56.751753988589904
+2020-11-24 14:15:53,143  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 57.45409575912566
+2020-11-24 14:15:53,244  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 62.07963351015216
+2020-11-24 14:15:53,335  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 57.552719058518555
+2020-11-24 14:15:53,463  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 62.08983778591377
+2020-11-24 14:15:53,527  ROOT INFO restart number 0 -- finished optimization after 25 iterations with loss : 62.45384684895109
+2020-11-24 14:15:53,618  ROOT INFO restart number 2 -- finished optimization after 25 iterations with loss : 62.19194277647871
+2020-11-24 14:15:53,702  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 62.34763281898738
+2020-11-24 14:15:53,823  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 59.915059210443175
+2020-11-24 14:15:53,857  ROOT INFO restart number 2 -- finished optimization after 25 iterations with loss : 62.44452398649923
+2020-11-24 14:15:54,015  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 59.914432385115035
+2020-11-24 14:15:54,055  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 57.56581115479783
+2020-11-24 14:15:54,199  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 59.932996939243765
+2020-11-24 14:15:54,243  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 57.543339828991606
+2020-11-24 14:15:54,438  ROOT INFO restart number 0 -- finished optimization after 40 iterations with loss : 53.404361123125405
+2020-11-24 14:15:54,446  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 57.56777261057865
+2020-11-24 14:15:54,633  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 53.475660409643666
+2020-11-24 14:15:54,654  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 50.49529885902093
+2020-11-24 14:15:54,854  ROOT INFO restart number 2 -- finished optimization after 40 iterations with loss : 53.386722980779034
+2020-11-24 14:15:54,856  ROOT INFO ENDING TRIAL : la : 1.7629844453088895e-06
+[32m[I 2020-11-24 14:15:54,857][0m Trial 15 finished with value: 1.0351358840008227 and parameters: {'la': 1.7629844453088895e-06}. Best is trial 14 with value: 1.015724793265959.[0m
+2020-11-24 14:15:54,862  ROOT INFO STARTING TRIAL : la : 8.091756848211708e-06
+2020-11-24 14:15:54,882  ROOT INFO restart number 1 -- finished optimization after 40 iterations with loss : 50.413490065474136
+2020-11-24 14:15:55,099  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 59.8607215018599
+2020-11-24 14:15:55,109  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 50.456984680535285
+2020-11-24 14:15:55,111  ROOT INFO ENDING TRIAL : la : 1.60292567046755e-06
+[32m[I 2020-11-24 14:15:55,111][0m Trial 16 finished with value: 1.0134151338355217 and parameters: {'la': 1.60292567046755e-06}. Best is trial 16 with value: 1.0134151338355217.[0m
+2020-11-24 14:15:55,116  ROOT INFO STARTING TRIAL : la : 1.0413083650178948e-05
+2020-11-24 14:15:55,291  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 59.967334204085915
+2020-11-24 14:15:55,310  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 59.89955814586472
+2020-11-24 14:15:55,504  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 59.91744946505433
+2020-11-24 14:15:55,509  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 59.83975504946075
+2020-11-24 14:15:55,684  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 59.898728523427025
+2020-11-24 14:15:55,719  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 58.1866948697097
+2020-11-24 14:15:55,893  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 55.3706774662434
+2020-11-24 14:15:55,920  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 58.15710218747708
+2020-11-24 14:15:56,090  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 55.340059007134535
+2020-11-24 14:15:56,117  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 58.14911663424048
+2020-11-24 14:15:56,257  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 55.44664521618485
+2020-11-24 14:15:56,291  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 62.65476654852213
+2020-11-24 14:15:56,412  ROOT INFO restart number 0 -- finished optimization after 25 iterations with loss : 60.50740953158817
+2020-11-24 14:15:56,461  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 62.67456833144525
+2020-11-24 14:15:56,566  ROOT INFO restart number 1 -- finished optimization after 25 iterations with loss : 60.475871794622364
+2020-11-24 14:15:56,618  ROOT INFO restart number 2 -- finished optimization after 25 iterations with loss : 62.76107081323288
+2020-11-24 14:15:56,722  ROOT INFO restart number 2 -- finished optimization after 25 iterations with loss : 60.52681633243025
+2020-11-24 14:15:56,796  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 58.83293671688851
+2020-11-24 14:15:56,890  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 58.45818360841031
+2020-11-24 14:15:56,969  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 58.74067580941844
+2020-11-24 14:15:57,048  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 58.44968420192421
+2020-11-24 14:15:57,145  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 58.72169633669981
+2020-11-24 14:15:57,200  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 58.414029013248935
+2020-11-24 14:15:57,325  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 52.319488664175026
+2020-11-24 14:15:57,384  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 55.17502803786286
+2020-11-24 14:15:57,526  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 52.32855123002046
+2020-11-24 14:15:57,583  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 55.147757766800034
+2020-11-24 14:15:57,715  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 52.344812330297344
+2020-11-24 14:15:57,717  ROOT INFO ENDING TRIAL : la : 8.091756848211708e-06
+[32m[I 2020-11-24 14:15:57,718][0m Trial 17 finished with value: 1.024337020602352 and parameters: {'la': 8.091756848211708e-06}. Best is trial 16 with value: 1.0134151338355217.[0m
+2020-11-24 14:15:57,723  ROOT INFO STARTING TRIAL : la : 1.4125077713597913e-05
+2020-11-24 14:15:57,777  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 55.22144626184276
+2020-11-24 14:15:57,778  ROOT INFO ENDING TRIAL : la : 1.0413083650178948e-05
+[32m[I 2020-11-24 14:15:57,779][0m Trial 18 finished with value: 1.018540403771351 and parameters: {'la': 1.0413083650178948e-05}. Best is trial 16 with value: 1.0134151338355217.[0m
+2020-11-24 14:15:57,850  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 57.60314459931349
+2020-11-24 14:15:57,956  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 57.516338412088636
+2020-11-24 14:15:58,054  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 57.520787475495226
+2020-11-24 14:15:58,157  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 59.006649061629965
+2020-11-24 14:15:58,242  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 59.10098597226032
+2020-11-24 14:15:58,338  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 59.10148138601625
+2020-11-24 14:15:58,442  ROOT INFO restart number 0 -- finished optimization after 30 iterations with loss : 63.49775448283303
+2020-11-24 14:15:58,525  ROOT INFO restart number 1 -- finished optimization after 25 iterations with loss : 63.58230195741725
+2020-11-24 14:15:58,598  ROOT INFO restart number 2 -- finished optimization after 25 iterations with loss : 63.56239972906726
+2020-11-24 14:15:58,700  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 58.39145059553356
+2020-11-24 14:15:58,779  ROOT INFO restart number 1 -- finished optimization after 30 iterations with loss : 58.48881679707851
+2020-11-24 14:15:58,859  ROOT INFO restart number 2 -- finished optimization after 30 iterations with loss : 58.50605621702957
+2020-11-24 14:15:58,957  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 52.07133423094308
+2020-11-24 14:15:59,049  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 52.090856677519
+2020-11-24 14:15:59,137  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 52.10811636690714
+2020-11-24 14:15:59,138  ROOT INFO ENDING TRIAL : la : 1.4125077713597913e-05
+[32m[I 2020-11-24 14:15:59,138][0m Trial 19 finished with value: 1.0161850246659718 and parameters: {'la': 1.4125077713597913e-05}. Best is trial 16 with value: 1.0134151338355217.[0m
+2020-11-24 14:15:59,347  ROOT INFO restart number 0 -- finished optimization after 35 iterations with loss : 72.77678337377304
+2020-11-24 14:15:59,452  ROOT INFO restart number 1 -- finished optimization after 35 iterations with loss : 72.74524532100664
+2020-11-24 14:15:59,558  ROOT INFO restart number 2 -- finished optimization after 35 iterations with loss : 72.75759960085709

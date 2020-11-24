@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "/Users/ulyssemarteau/Desktop/NIPS/Experiments/npm_nnf/npm_nnf/density_estimation/../utils/optimize_parameters.py", line 19, in <module>
+    import optuna
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/optuna/__init__.py", line 10, in <module>
+    from optuna import multi_objective  # NOQA
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/optuna/multi_objective/__init__.py", line 5, in <module>
+    from optuna.multi_objective import visualization  # NOQA
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/optuna/multi_objective/visualization/__init__.py", line 1, in <module>
+    from optuna.multi_objective.visualization._pareto_front import plot_pareto_front  # NOQA
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/optuna/multi_objective/visualization/_pareto_front.py", line 11, in <module>
+    from optuna.visualization._plotly_imports import _imports
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/optuna/visualization/__init__.py", line 1, in <module>
+    from optuna.visualization import matplotlib  # NOQA
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/optuna/visualization/matplotlib/__init__.py", line 1, in <module>
+    from optuna.visualization.matplotlib._edf import plot_edf  # NOQA
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/optuna/visualization/matplotlib/_edf.py", line 12, in <module>
+    from optuna.visualization.matplotlib._matplotlib_imports import _imports
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/optuna/visualization/matplotlib/_matplotlib_imports.py", line 10, in <module>
+    from matplotlib import pyplot as plt  # NOQA
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/matplotlib/pyplot.py", line 2355, in <module>
+    switch_backend(rcParams["backend"])
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/matplotlib/pyplot.py", line 221, in switch_backend
+    backend_mod = importlib.import_module(backend_name)
+  File "/opt/miniconda3/envs/p36/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/ipykernel/connect.py", line 13, in <module>
+    from IPython.core.profiledir import ProfileDir
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/IPython/__init__.py", line 56, in <module>
+    from .terminal.embed import embed
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/IPython/terminal/embed.py", line 16, in <module>
+    from IPython.terminal.interactiveshell import TerminalInteractiveShell
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/IPython/terminal/interactiveshell.py", line 19, in <module>
+    from prompt_toolkit.enums import DEFAULT_BUFFER, EditingMode
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/prompt_toolkit/__init__.py", line 16, in <module>
+    from .application import Application
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/prompt_toolkit/application/__init__.py", line 1, in <module>
+    from .application import Application
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/prompt_toolkit/application/application.py", line 41, in <module>
+    from prompt_toolkit.buffer import Buffer
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/prompt_toolkit/buffer.py", line 33, in <module>
+    from .completion import (
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/prompt_toolkit/completion/__init__.py", line 1, in <module>
+    from .base import (
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/prompt_toolkit/completion/base.py", line 8, in <module>
+    from prompt_toolkit.formatted_text import AnyFormattedText, StyleAndTextTuples
+  File "/opt/miniconda3/envs/p36/lib/python3.6/site-packages/prompt_toolkit/formatted_text/__init__.py", line 25, in <module>
+    from .utils import (
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 764, in get_code
+  File "<frozen importlib._bootstrap_external>", line 832, in get_data
+KeyboardInterrupt
