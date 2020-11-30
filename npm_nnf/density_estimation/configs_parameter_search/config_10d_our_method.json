@@ -17,7 +17,7 @@
   "model" : ["npm_nnf.density_estimation.utils_density2","QuadraticEstimator" ],
   "save_path" : "npm_nnf/density_estimation/models",
   "save_name" : "density_estimation",
-  "n_jobs": 10,
+  "n_jobs": 5,
   "version" : 1,
   "eta" : 0,
   "prune" : false,

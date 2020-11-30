@@ -376,6 +376,15 @@ def save_version(info,path,model = None,version = None,extension = 'pickle'):
 
 def perform_study(model, ds,fixed_params = {}, variable_params = {} ,cv= 5, prune = False,
                   n_trials = 1,file_path = "",file_name = "",eta = 0,n_jobs = 1,gs_algo = 'optuna'):
+    if n_jobs < -1:
+        n_jobs_cv = -1
+        n_jobs_o = 1
+    elif n_jobs <= cv:
+        n_jobs_cv  = n_jobs
+        n_jobs_o = 1
+    else:
+        n_jobs_o = n_jobs // cv
+        n_jobs_cv = cv
     if prune == True:
         prun = PrunedCV_altered(cv,0.05,minimize = True)
     if gs_algo == 'optuna':
@@ -403,7 +412,7 @@ def perform_study(model, ds,fixed_params = {}, variable_params = {} ,cv= 5, prun
 
 
             else:
-                scores = -cross_val_score(res,ds.X,y=ds.y,cv = cv)
+                scores = -cross_val_score(res,ds.X,y=ds.y,cv = cv,n_jobs = n_jobs_cv )
 
                 score = scores.mean()
 
@@ -417,7 +426,7 @@ def perform_study(model, ds,fixed_params = {}, variable_params = {} ,cv= 5, prun
             return score+eta*std
         study = optuna.create_study(direction = "minimize")
         study.optimize(objective,
-                   n_trials=n_trials, show_progress_bar=True, n_jobs=n_jobs)
+                   n_trials=n_trials, show_progress_bar=True, n_jobs=n_jobs_o)
         best_parameters = study.best_params
         for key in fixed_params.keys():
             if not (key in best_parameters.keys()):
