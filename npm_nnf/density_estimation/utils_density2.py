@@ -125,6 +125,9 @@ class stopper(object):
                 logging.info(f'optimization stopped after {self.iter} iterations')
                 return True
         elif self.stype == 'dg':
+            if self.iter >= self.Niter:
+                logging.warning(f'optimization reached max number of iterations {self.iter}')
+                return True
             return False
         if self.iter > 100 and self.max_loss - self.losses[-1] > 0.1*self.gap :
             logging.warning('training loss is decreasing too much')
